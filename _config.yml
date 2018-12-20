@@ -16,7 +16,6 @@ RSS: false
 weibo_username:     Magic Pack
 zhihu_username:     Magic Pack
 github_username:    Magic Pack
-twitter_username:   Magic Pack
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
