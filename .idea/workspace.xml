@@ -3,6 +3,108 @@
   <component name="ChangeListManager">
     <list default="true" id="07bc9e56-5dc2-4149-92fc-196beb3d2ca8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archetypes/default.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/about.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/post/hello.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/showcase.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/about/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/2bf08001f42c34e30e1de9d2eb81aead.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/62da0ac51db1e4a3a4d57b9154a344fc.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/blue.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/green.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/pink.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/prism.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/red.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/categories/page/1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/favicon/blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/favicon/green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/favicon/orange.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/favicon/pink.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/favicon/red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/hello.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/page/1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/post/hello/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/post/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/post/index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/post/page/1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/showcase/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/tags/page/1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/hello.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/.eslintrc.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/USERS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/archetypes/posts.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/images/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/images/tn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/_default/baseof.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/_default/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/_default/single.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/partials/comments.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/partials/extended_footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/partials/extended_head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/partials/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/partials/head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/partials/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/partials/logo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/partials/menu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/partials/pagination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/shortcodes/figure.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/layouts/shortcodes/image.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/buttons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/color/blue.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/color/green.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/color/pink.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/color/red.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/font.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/logo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/pagination.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/post.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/prism.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/syntax.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/css/variables.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/fonts/FiraCode-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/fonts/FiraCode-Regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/js/languageSelector.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/js/menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/source/js/prism.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/assets/2bf08001f42c34e30e1de9d2eb81aead.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/assets/62da0ac51db1e4a3a4d57b9154a344fc.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/assets/blue.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/assets/green.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/assets/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/assets/pink.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/assets/prism.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/assets/red.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/assets/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/img/favicon/blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/img/favicon/green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/img/favicon/orange.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/img/favicon/pink.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/static/img/favicon/red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/theme.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/hugo-theme-terminal/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +159,7 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -99,7 +202,7 @@
       <updated>1545301992790</updated>
       <workItem from="1545301993989" duration="7036000" />
       <workItem from="1545811095894" duration="675000" />
-      <workItem from="1575827534225" duration="2072000" />
+      <workItem from="1575827534225" duration="2611000" />
     </task>
     <servers />
   </component>
