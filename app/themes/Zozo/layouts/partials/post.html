@@ -33,13 +33,13 @@
 {{ end }}
 
 <div class="pagination">
-    {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
-    {{ if $paginator.HasPrev }}
+    {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+    {{ if .Paginator.HasPrev }}
     <a href="{{$paginator.Prev.URL}}" class="pre">
         {{ i18n "prev_page" }}
     </a>
     {{ end }}
-    {{ if $paginator.HasNext }}
+    {{ if .Paginator.HasNext }}
     <a href="{{$paginator.Next.URL}}" class="next">
         {{ i18n "next_page" }}
     </a>
