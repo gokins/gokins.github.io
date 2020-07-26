@@ -1,7 +1,8 @@
-baseURL = "http://localhost:1313/"
+#baseURL = "http://localhost:1313/"
+baseURL = "http://sgo.cool"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
-title = "道°"                         # site title  # 网站标题
+title = "思°"                         # site title  # 网站标题
 theme = "zozo"
 hasCJKLanguage = true                  # has chinese/japanese/korean ?  # 自动检测是否包含 中文\日文\韩文
 summaryLength = 100
@@ -43,9 +44,9 @@ pygmentscodefencesguesssyntax = true
 
 [params]
   subTitle = "思危 , 思变 , 思退"                                       # site's subTitle  # 网站二级标题
-  footerSlogan = "// 道生一，一生二，二生三，三生万物。"                    # site's footer slogan  # 网站页脚标语
-  keywords = ["技术","编程","架构","管理"]                                  # site's keywords  # 网站关键字
-  description = "高效的管理下产生简洁的架构方案，才能让编程更加优雅，技术才可持续." # site's description  # 网站描述
+  footerSlogan = "// 路漫漫其修远兮，吾将上下而求索。"                    # site's footer slogan  # 网站页脚标语
+  keywords = ["思考","技术","编程","架构","管理","商业"]                                  # site's keywords  # 网站关键字
+  description = "思考: 如何才能高效的管理，运用简洁的架构，优雅地编程，实现商业的可持续." # site's description  # 网站描述
   enableMathJax = true                                                # enable mathjax  # 是否使用mathjax（数学公式）
   enableSummary = true                                                # display the article summary  # 是否显示文章摘要
   mainSections = ["posts","post"]
