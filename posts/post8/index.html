@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Gavin" />
+	
+	
+	
+	<title>构建 Go 应用的一个示例888888888 ｜ 思°</title>
+	
+    
+    
+    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur ipsum dui, aliquet nec commodo at, tristique eget ante." />
+    
+
+    
+    
+    <meta name="keywords" content="思考, 技术, 编程, 架构, 管理, 商业" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="http://sgo.cool/images/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="http://sgo.coolcss/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://sgo.cool/css/zozo.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="http://sgo.cool/css/highlight.css" />
+
+    
+    
+</head>
+
+<body>
+<div class="main animate__animated animate__fadeInDown">
+    <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">文章</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">标签</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+    <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="http://sgo.cool">
+                    <span>思°</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">思危 , 思变 , 思退</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/gokins" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/aiwanfulishe" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                <a href="http://sgo.cool/index.xml" type="application/rss+xml" title="rss" target="_blank"><i
+                        class="ri-rss-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="content">
+        <div class="post_page">
+            <div class="post animate__animated animate__fadeInDown">
+                <div class="post_title post_detail_title">
+                    <h2><a href='/posts/post8/'>构建 Go 应用的一个示例888888888</a></h2>
+                    <span class="date">2019.01.25</span>
+                </div>
+                <div class="post_content markdown"><p>刚开始我很好奇，为什么我把长地址 A 转换为 自己撸一个或者去网上找找别人已经实现的。
+经常有读者问我：如何才能提高自己的深度思考能力？</p>
+<p>一般情况下，我总会给一个最简单的建议：多读一些复杂的、需要费脑子的文章和书籍。不用强求能读懂多少，但要努力读进去。</p>
+<p><strong>为什么呢？目的不在于从它们中获得启发，而在于，通过这种方式，锻炼我们的前额叶，让它逐渐习惯这种「需要动脑」的模式。从而，当我们遇到问题时，能够快速让它运转起来。</strong></p>
+<p>一旦形成习惯，「深度思考」对于你而言，就不再是「深度思考」了 —— 它变成了一件非常自然、无需费力干涉的事情。</p>
+<p>就像许多老读者，最常给我的反馈就是：</p>
+<p>自从建立了阅读和思考的正确习惯之后，回过头看以前常读的文章，总觉得寡淡无味，毫无信息量，根本读不下去，脑子里只有一个念头：「我以前怎么会读这种没脑子的东西？」</p>
+<p>再比如，之前我分享了我的「生活管理系统」，许多读者留言，说实在是太复杂了，没看懂。</p>
+<p>但实际上，这篇文章呈现出来的内容，大概只有我整套管理系统的1/10，还有好多东西限于篇幅没机会讲……</p>
+<p>为什么会这样呢？是因为我特别聪明吗？其实不是的。是因为它们对我来说，已经足够熟悉，已经内化成了我日常生活中的本能，成为我生活轨迹的一部分。就像吃饭喝水一样，无需耗费我的脑力。</p>
+<p><strong>所以，我就可以基于这些已经内化的流程和模式，把脑力花在对新方法、新事物的探索上面，专注于思考如何去优化它。</strong></p>
+<p>我之前说过：大脑的本质是什么？是一台贝叶斯机器。我们每天生活里的一切行为，都是在训练它。</p>
+<p>你喂给它什么，它就会成为什么。</p>
+<p><strong>你喂给它粗制滥造、无需动脑的信息，大脑就会变得日渐懒惰、懈怠，因为它发现这样就足以应对每一天的生活；你喂给它高度复杂、需要反复咀嚼的信息，大脑就会努力改变自己、调整自己，来适应信息的难度，直到得心应手为止。</strong></p>
+<p>终我们一生，大脑一直在做一件事情：把需要花费脑子去做的事情，变成「不需要动脑」的自动化加工模式。</p>
+<p>对许多人来说，大脑的这种特性，几乎是没有上限的。你给予它足够大的挑战跟刺激，大脑就会自己通过构建和强化突触连接，改变自己的内在结构和适应性，来适应它所预测到的「新情境」。</p>
+<p>这个过程，我们就把它叫做成长。</p>
+<p><strong>这也就是今天的主题：如何设计一套属于自己的「成长系统」。</strong></p>
+<p><strong>大脑的最佳状态是什么？</strong></p>
+<p>我之前在文章中提到过：<strong>人变强的本质是什么？就是心智世界对现实世界的拟合。</strong></p>
+<p>这种拟合，表现出来是什么呢？简而言之，就是大脑这个内在系统，对世界 —— 这个外在系统 —— 的自演化和适应。</p>
+<p>下面详述。</p>
+<p>我们所摄入的一切信息，所思考的一切痕迹，就构成了大脑内在系统的结构。</p>
+<p>这个结构，会不断为大脑提供动力，支撑着它去理解、探索外部世界。</p>
+<p>在这个过程中，外部世界又会通过种种触点，给予大脑反馈。这种反馈，会在整个内在系统内部形成一个力，迫使大脑改变内在结构，来抵消和适应它。</p>
+<p><strong>那么，如何抵消这个外部世界给予的力呢？就是通过把各种节点进行重构、联结，重新形成一个小的局部系统，来把这个外力消解掉。</strong></p>
+<p>你可以这样理解：一台机器，各个部件之间通过齿轮联动起来。那么，当你用力推它，所有的齿轮就会转动，一个带动另一个。这种转动，就把你所给予的外力消解了。只要所有的齿轮是严密合缝的，你提供力的方向是稳定的，那无论你怎么推，只能改变它们的转速，而不会改变这个系统。</p>
+<p>这就是大脑想达到的最佳状态：构造一个足够稳定的系统，无论外部世界施加什么样的刺激和力，都能够通过系统本身的结构来消解。</p>
+<p>但是，当然，现实世界是极其复杂的，几乎不可能出现这种状况。这就导致了：施加到内在系统上面的力，方向往往是不同的，多变的，全方位地挑战着这个系统的种种薄弱环节。</p>
+<p>在这种情况下，如果一个局部系统无法通过固有的构造来抵消外力，会怎么样呢？残留的外力会留在系统里，积蓄起一种残余的能量，迫使系统对它作出处理。</p>
+<p>举个简单的例子：学过射箭的朋友会知道，拉弓弦的能量会被箭的动能带走，这时整个系统是平衡的。但如果只拉空弦，没有箭，那么拉弦的能量就会被传递到弓的各部位，极有可能造成弓的断裂。</p>
+<p>也就是说，这个系统无法处理「残余的能量」，导致分崩离析了。</p>
+<p><strong>所以，大脑只能退而求其次：我不求「完全不动」了，但我只希望能尽可能减少这种残余的能量，使它尽可能最小化，不要老是逼迫我去「大改」。</strong></p>
+<p>这种残余的能量，就叫做「自由能」。大脑的这个特性，用神经科学家 Karl Friston 的话来说，就叫做「自由能最小定律」（Free-energy principle）。</p>
+<p><strong>一个人的两种状态模式</strong></p>
+<p>那么，基于自由能最小定律，大脑会有什么样的策略呢？</p>
+<p>大体来说，会有两种方式。</p>
+<p>第一种，就是把自己关在一个小圈子里面。先通过调整内部构造，达到一个相对稳定的状态之后，再去「筛选环境」，找到一个适宜自己生存的小圈子，然后建筑起一道高墙，一切外在的信息都必须经过审查，跟内部系统一致的，才能放进来，否则就摒弃在墙外，当它们不存在。</p>
+<p>在这种情况下，外在的一切刺激，都经过重重筛选，当然就不会有不可预料的「意外」和自由能了。</p>
+<p><strong>这样的人，往往会有一套自己对世界的认知，这套认知可能是自洽的、能说得通的，在某些场景下也适用，但放到更广阔的世界里可能就不适用了。</strong></p>
+<p>不过，没关系：对他们来说，我所在的地方，就是整个世界。不符合认知的，他们也会通过一整套机制 —— 包括「过度简化」「证实偏见」「动机性推理」来扭曲它，让它符合自己的认知。实在扭曲不了的，无视掉就好了。</p>
+<p>现实中，许多人都是这样的模式。在一个小圈子里久了，在一个固定的位置上久了，做自己熟悉且适应的事情久了，我们就很容易扭曲自己的心智世界，用自己的目光去给世界加滤镜 —— 这也就是我之前写到的「中心化效应」。</p>
+<p><strong>这是第一种模式，把自己「关起来」。</strong></p>
+<p><strong>第二种，则是「走出去」，主动去探索和拥抱世界</strong></p>
+<p>通过构造一个拥有极高「可塑性」和弹性的系统，保证在遇到任何外部冲击的时候，都能够通过灵活多变的微调，来最大化地消除外力所造成的「自由能」，从而让系统具备更强的抗冲击能力。</p>
+<p>这种模式下，外部世界的冲击和刺激，对他们来说，反而是一种使内在系统变得更紧密、更稳固，更容易适应多种环境的机会。也就是 Taleb 所说的「反脆弱性」。</p>
+<p>这样的人，会非常警惕「一致」。因为，长期处在一个「一致」的环境中，对他们来说，反而是一种危机：这会减少它们接触到的外界反馈，让灵活的系统慢慢变得凝涩、固化，不再拥有弹性。</p>
+<p>那么，如何才能从第一种模式，进化到第二种模式呢？</p>
+<p>简单来说，要建立起一种足够具备弹性的内在系统，需要经历四个步骤：</p>
+<p><strong>1）多元化接触外部世界，接收新的、预期之外的「意外」刺激。</strong></p>
+<p><strong>2）理解新的情境，吸收相对应的信息和经验，内化为系统的一环。</strong></p>
+<p><strong>3）从新刺激、新情境中提炼出对系统整体有所助益的模式，用来监测和指导系统的演化。</strong></p>
+<p><strong>4）用演化之后的新系统去接触外部世界，把「新的」转变为「旧的」。</strong></p>
+<p><img src="file:///Users/Gavin/Documents/.FocusNote/assets/1bfb8407-765c-465c-bec1-d8b01d62d601.png" alt=""></p>
+<p>可以看到，这四个步骤，构成了一个小的循环，一个不断内化新事物、完善自己框架的循环回路。也就是我提过很多次的：<strong>以我为主，为我所用。</strong></p>
+<p><img src="file:///Users/Gavin/Documents/.FocusNote/assets/22447635-7ed6-4e37-b9bd-d0612220af1d.gif" alt=""></p>
+<p><strong>如何不断训练大脑？</strong></p>
+<p>把这套思维，迁移到我们身上，能得到什么启示呢？</p>
+<p>简而言之，其实就是两点：</p>
+<p>**1）对外：**不断接触新的刺激，并通过对大脑的训练，把它们内化为自己的本能反应，把「主动加工」变成「自动化加工」。</p>
+<p>**2）对内：**拎出自己应对新问题、新情境的「自动化加工」模式，去思考它们的不足和欠缺，结合对新情境的理解，逐步完善和优化，并用新的结果来替代自己旧的模式。</p>
+<p>举个非常简单的例子。</p>
+<p><strong>行为经济学告诉我们，人都是有「损失厌恶」的。同一个事物，用不同的框架呈现出来，所引起我们的感受和反应也会不同（框架效应）。这就是我们内禀的、对事物的自动化加工模式。</strong></p>
+<p>比如：70%的成功率，跟30%的失败率，这两者是一模一样的。但当我们关注「失败率」的时候，它所带给我们的畏惧感和阻碍感，会比我们关注成功率的时候更高 —— 这就是损失厌恶。</p>
+<p>理解了这一点之后，我们要怎么做呢？用损失厌恶来指导我们思考问题和决策吗？当然不是。我们要做的，是引入理性的力量，来「对冲」我们大脑中天生具有的、非理性的部分，消除掉我们的这种「框架效应」。</p>
+<p>这就是一个把旧模式拎出来，去审视和思考它，再通过逐步微调和完善，用新模式来替代旧模式的过程。</p>
+<p><strong>再比如：当你碰到一个看起来很厉害的方法（比如我之前分享过的「生活管理系统」），该怎么做呢？是直接照搬吗？</strong></p>
+<p>当然不是。你要做的，是理解它的原理，再结合自己的实际情况和需求，先引入其中的一小部分，融入到自己的实践当中，让自己的「系统」去慢慢消化这个「新刺激」；等到它跑通了，无需耗费脑力去维持它，再引入另一小部分，继续消化，继续跑通……</p>
+<p>在这个过程中，你也完全无需按部就班遵循每一步的操作。而是应该基于对它的理解和对自己的洞悉，加入自己的元素，去改造它、微调它，让它来适应你，最终融入你的系统当中，成为你「新模式」的一部分。</p>
+<p>这就是我在《<a href="http://mp.weixin.qq.com/s?__biz=MzAxNTY0NjEzNg==&amp;mid=2247485933&amp;idx=1&amp;sn=9dbc4ed35adf5a5c78f52fbbe747bd67&amp;chksm=9b81a53aacf62c2c0e88777a51eb26920dce1dca82ca4478802babac731ae09fccd6d95b3ab8&amp;scene=21#wechat_redirect">做成任何事情的方法</a>》中写到的「眼高手低法」，一个不断训练大脑，把主动加工变成自动化加工的过程。</p>
+<p>也就是我们不断更新自己「思维操作系统」的过程。</p>
+<p><img src="file:///Users/Gavin/Documents/.FocusNote/assets/beb52070-aab5-4d62-b403-c4b7e31d623b.gif" alt=""></p>
+<p><strong>5个方法</strong></p>
+<p><strong>设计适合自己的成长系统</strong></p>
+<p>那么，回到主题：如何更好地设计一套这样的成长系统呢？</p>
+<p>分享几点心得，希望能够帮到你。</p>
+<p><strong>1、把思考和行动流程化</strong></p>
+<p>我有一个习惯，每次做成一件事情，我都会想，能不能把这件事情设计成一个流程？</p>
+<p>大到公司里新的项目，运营方针，小到个人生活里的各种细节，我都会想办法从中找出「能够复制和迁移」的关键，用流程的形式把它固化下来。</p>
+<p>可以是一系列步骤，可以是一个模型，可以是一套SOP，也可以是一张核对表……不一定要书面化储存，对于一些比较简单的流程，我也会先梳理一下，然后记在脑子里，需要的时候按部就班去用就好。</p>
+<p><strong>一旦变成流程，也就意味着：当我再次面对类似的问题时，无需重复操心，可以直接调用我已有的流程来解决它。</strong></p>
+<p>举个例子：我在生活中会需要处理很多信息，比如各种各样的新知识，突然冒出来的灵感和点子，日常生活中的各种琐事和材料……但无论它们有多杂乱，我总是可以用一整套 INK-P 体系，对它们进行管理。</p>
+<p>比起我花费脑力去分门别类地处理每一件事情，把一切都丢给流程，未必是最好的，但一定是最省力、最小化「不必要的麻烦」的。</p>
+<p>所以，你在我很多文章里面，会看到各种各样的方法和模型 —— 这里面，其实有很多，都是我总结和归纳出来的流程。</p>
+<p>流程的本质是什么？是你自身「内在系统」的一部分，亦即你理解外部世界、处理新情境的一种加工模式。一个人成长的过程，很重要的一点，就是不断把新问题、新情境，内化进自己的系统里，成为自己系统的一部分。</p>
+<p>所有一切我面对过的问题，最终都会成为我解决新问题的助力。</p>
+<p>这是成长的基础，也是我们不断壮大自己的方式。</p>
+<p><strong>2、拓展自己的网络节点</strong></p>
+<p>在我的文章里，你可能会看到各种领域的知识点：心理学，哲学，社会学，经济学……很多看似不相干的知识点，其实都可以通过某些方式串连起来，碰撞出新的火花。</p>
+<p>这就是一个很有意思的地方：知识是有网络效应的。</p>
+<p>什么意思呢？假设你一共有3个知识点，那么它们之间连接的可能性就有3种；如果有4个知识点，就是6种；而如果有10个知识点呢？那就是45种。</p>
+<p>你拥有的知识节点越多，它们之间通过碰撞、重构，构建出新组合的可能性，也就越多。</p>
+<p>这就意味着，当你面对新刺激、新情境时，你会拥有更强的「弹性」—— 你可以通过对多个节点和连接的重组，保持一个柔性的结构，最大限度地消解外在的冲击力。</p>
+<p>这里要注意2点。</p>
+<p>**1）这些节点，不仅仅是知识，也包括经验。**一切你所动脑解决过的问题，从中获取到的心得和经验，都应该储存起来，做成一套属于自己的「工具箱」，在需要的时候可以拿出来组合、使用。</p>
+<p>**2）不同领域的节点，往往更容易互相碰撞，**构建一些你之前从未想到过的连接，从底层打通，形成一套紧密而极具韧性的系统 —— 这也就是查理芒格所说的「多元栅格模型」。</p>
+<p>它们将会是你拓展心智世界边界的强大助力。</p>
+<p><strong>3、更新自己的思维框架</strong></p>
+<p>什么是思维框架？举个例子：我们把水倒进一个杯子里，如果水是问题，那么杯子就是框架。不同的框架，会体现出对问题不同的呈现方式，也会影响我们的思考方式。</p>
+<p>简单来说，思维框架，就是我们在思考问题的时候，那些默认为真的、用来约束我们思维的条条框框。</p>
+<p>像下面这些要素：</p>
+<ul>
+<li>被默认为真的假设和信念</li>
+<li>对问题贴上的标签和分类</li>
+<li>思考问题的切入点和角度</li>
+<li>习惯性的经验和路径依赖</li>
+</ul>
+<p>……</p>
+<p>这些东西，都可以是我们处理新问题的捷径，能够帮我们省力。但如果局限于用固有的框架看待问题，那就只能一直停留在「旧模式」里面。</p>
+<p>一个好的思维框架，是需要不断去打破和重建的。在这个过程中，通过质疑那些固有的信念、条件，你会更加透彻地理解自己，同时更好地理解我们所面对的情境。</p>
+<p>如何更新框架呢？可以参考我在上一篇文章里提到的：</p>
+<p><strong>质疑自己框架所赖以持存的各种信念；广泛接触新信息，并让它们互相融合、修补；形成新的框架，并容纳其他不一致的信念的存在。</strong></p>
+<p>一个好的思维模式，一定是能够容纳种种不同信念，保持在自己内心中，容许它们互相整合、互相碰撞、共同生长的模式。</p>
+<p>一颗强大的内心，也是如此。</p>
+<p><strong>4、设计系统演化的路径</strong></p>
+<p>如果把我们看作一个不断成长和演化的系统，那么，你会得到一个启示：</p>
+<p>很多时候，其实不是我们自己不断地「往前走」，而是我们的内在系统本身，沿着我们设计的关键节点和路径，自行演化和发展。</p>
+<p>也就是说，对我们来说，更重要的，不是去推动自己「我要做什么」，而是找到自己的关键节点，把它们整合成一条路径，再给予自己足够的内驱力。</p>
+<p>这就需要你具备一个愿景和目标，并且，能够基于对愿景和自身本质的理解，决定每一个关键节点的方向，让系统始终保持一个稳定的方向。</p>
+<p><strong>举个例子：你不一定知道「我适合什么工作」，但你需要明确的是：我擅长什么，对什么感兴趣，什么事物能给我意义感、使命感；你未必知道「我要什么」，但一定要很清楚「我不要什么」。</strong></p>
+<p>这些，就是对你内在系统的限制和约束条件。</p>
+<p>在这个基础上，再广泛去接触各种可能性，多元化自己的生活模式，让自己接触更多的圈子、更广阔的的天地……从体验中去观察、学习和感受，让系统自然演化。</p>
+<p>简而言之，把外部动机转化为内部动机，变自律为自驱，化外在控制点为内在控制点，让自己感受到你对生活的自主性和控制感。</p>
+<p>只有你掌控了生活，你才不会被生活所掌控。</p>
+<p><strong>5、用实验的心态去探索</strong></p>
+<p>我有个习惯，喜欢用「实验」的态度，去面对我未曾涉足过的新领域。</p>
+<p>这样一来，如果做成了，那很好；如果没做成，也没关系，在这个过程中，我可以获得许多经验，增进我对外部世界的理解，帮助我更好地调适自己的内在系统。</p>
+<p>不要太计较结果，而是去关注过程，关注过程里你的感受、想法、经验，以及你的成长和生命体验的丰富。</p>
+<p>这是让自己永远保持热情和探索欲的最好方式。</p>
+<p>一个人什么时候才会停止成长？当他对这个世界失去好奇心的时候。</p>
+<p>永远让新事物成为你的养料，而不是阻碍。</p>
+<p><img src="file:///Users/Gavin/Documents/.FocusNote/assets/ae603397-cb2b-48e0-8f3e-7640c3854fbe.png" alt=""></p>
+<p>最后一点建议，也是文章最开头讲过的：<strong>尽量少读不动脑的信息，多读费脑子的文章和书籍。</strong></p>
+<p>如果你读不进去，慢慢来，哪怕读一两页也行。久而久之，你一定能感受到自己的变化。</p>
+</div>
+                <div class="post_footer">
+                    
+                    <div class="meta">
+                        <div class="info">
+                                <span class="field tags">
+                                    <i class="ri-stack-line"></i>
+                                    
+                                    <a href="http://sgo.cool/%20tags/%E8%A7%84%E8%8C%83/">规范</a>
+                                    
+                                    <a href="http://sgo.cool/%20tags/%E5%88%86%E6%9E%90/">分析</a>
+                                    
+                                    <a href="http://sgo.cool/%20tags/%E6%8A%80%E5%B7%A7/">技巧</a>
+                                    
+                                    <a href="http://sgo.cool/%20tags/%E7%A0%94%E7%A9%B6/">研究</a>
+                                    
+                                    <a href="http://sgo.cool/%20tags/%E5%8E%9F%E5%9E%8B/">原型</a>
+                                    
+                                </span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            
+            <div class="pagination">
+                <div class="pagination__buttons">
+                    
+                    <span class="button previous">
+        <a href="http://sgo.cool/posts/post7/">
+          <span class="button__icon">«</span>
+          <span class="button__text">构建 Go 应用的一个示例6777777777</span>
+        </a>
+      </span>
+                    
+                    
+                    <span class="button next">
+        <a href="http://sgo.cool/posts/nitro/">
+          <span class="button__text">Nitro: A quick and simple profiler for Go</span>
+          <span class="button__icon">»</span>
+        </a>
+      </span>
+                    
+                </div>
+            </div>
+            
+            
+            
+            <div class="doc_comments"></div>
+            
+        </div>
+    </div>
+</div>
+<a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+<footer class="footer">
+    <div class="powered_by">
+        <a href="https://varkai.com">Theme Designed by VarKai,</a>
+        <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
+    </div>
+
+    <div class="footer_slogan">
+        <span>// 路漫漫其修远兮，吾将上下而求索。</span>
+    </div>
+</footer>
+<script src="http://sgo.cool/js/jquery-3.5.1.min.js"></script>
+<link href="http://sgo.cool/css/fancybox.min.css" rel="stylesheet">
+<script src="http://sgo.cool/js/fancybox.min.js"></script>
+<script src="http://sgo.cool/js/zozo.js"></script>
+
+
+<script type="text/javascript" async
+    src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
+        });
+
+        MathJax.Hub.Queue(function () {
+            
+            
+            
+            var all = MathJax.Hub.getAllJax(), i;
+            for (i = 0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+    </script>
+
+<style>
+    code.has-jax {
+        font: inherit;
+        font-size: 100%;
+        background: inherit;
+        border: inherit;
+        color: #515151;
+    }
+</style>
+
+
+
+</body>
+
+</html>
