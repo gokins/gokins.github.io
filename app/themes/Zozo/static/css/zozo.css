@@ -159,12 +159,26 @@ hr {
   color: #000000;
 }
 
-.header .site_title_container .site_title a span {
-  display: block;
-}
-
 .header .site_title_container .site_title a:hover {
   color: #666666;
+}
+
+.header .site_title_container .site_title a span {
+  display: block;
+  font-style: normal;
+  position: relative;
+
+}
+.header .site_title_container .site_title a span:after{
+  font-style: normal;
+  color: #909090;
+  content: "思°";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33%;
+  overflow: hidden;
+  z-index: 10000;
 }
 
 .header .site_title_container .description {

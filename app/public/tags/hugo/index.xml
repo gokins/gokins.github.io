@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hugo on 思°</title>
-    <link>http://sgo.cool/tags/hugo/</link>
+    <link>https://sgo.cool/tags/hugo/</link>
     <description>Recent content in hugo on 思°</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 25 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://sgo.cool/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sgo.cool/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>构建 Go 应用的一个示例6777777777</title>
-      <link>http://sgo.cool/posts/post7/</link>
+      <link>https://sgo.cool/posts/post7/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://sgo.cool/posts/post7/</guid>
+      <guid>https://sgo.cool/posts/post7/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为 自己撸一个或者去网上找找别人已经实现的。</description>
     </item>
     
