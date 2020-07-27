@@ -289,7 +289,7 @@ hr {
 
 .post .post_footer .meta .info {
   float: left;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .post .post_footer .meta .info .date {
@@ -366,7 +366,8 @@ hr {
 
 .footer .powered_by {
   margin: 0;
-  font-size: 11px;
+  font-size: 12px;
+  color:#c0c0c0;
 }
 
 .footer .powered_by a {
