@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="VarKai" />
+    <meta name="author" content="Gek" />
 	
 	
 	
@@ -149,7 +149,24 @@ Step-4、HTTP 通过 302 状态码转到去请求对应的长地址  <a href="ht
             
             
             
-            <div class="doc_comments"></div>
+            
+<div class="doc_comments">
+    <div class="comments_block_title">发表评论</div>
+    <div id="vcomments"></div>
+</div>
+
+<link rel="stylesheet" href="https://sgo.cool/css/comments.css" />
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        appId: 'CVmK0iQxzUVeinw5MdBGDjuJ-gzGzoHsz',
+        appKey: 'iUuIPIWxHSAmnTIiUiRVv70B',
+        placeholder: '子曰：...',
+        visitor: 'true',
+    })
+</script>
             
         </div>
     </div>

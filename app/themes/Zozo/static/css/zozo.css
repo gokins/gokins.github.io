@@ -269,11 +269,11 @@ hr {
 .post .post_content a {
   text-decoration: none;
   letter-spacing: 1px;
-  color: #e42b2b;
+  color: #ff6e6e;
 }
 
 .post .post_content a:hover {
-  color: #8e0000;
+  color: #fe2626;
 }
 
 .post .post_footer {
@@ -343,7 +343,7 @@ hr {
 }
 
 .doc_comments .comments_block_title {
-  color: #000000;
+  color: #d0d0d0;
 }
 
 .footer {
