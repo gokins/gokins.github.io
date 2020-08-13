@@ -92,5 +92,32 @@
       <description></description>
     </item>
     
+    <item>
+      <title>ok</title>
+      <link>https://sgo.cool/tags/ok/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sgo.cool/tags/ok/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>同步</title>
+      <link>https://sgo.cool/tags/%E5%90%8C%E6%AD%A5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sgo.cool/tags/%E5%90%8C%E6%AD%A5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>测试</title>
+      <link>https://sgo.cool/tags/%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sgo.cool/tags/%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

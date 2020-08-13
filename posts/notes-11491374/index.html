@@ -8,11 +8,11 @@
 	
 	
 	
-	<title>Nitro: A quick and simple profiler for Go ｜ 思°</title>
+	<title>构建同步一个示例 ｜ 思°</title>
 	
     
     
-    <meta name="description" content="Nitro is a simple profiler for your Golang applications" />
+    <meta name="description" content="刚开始我很好奇，为什么我把长地址 A 转换为 自己撸一个或者去网上找找别人已经实现的。经常有读者问我：如何才能提高自己的深度思考能力？一般情况下，我总会给一个最简单的建议：多读一些复杂的、需要费脑子的文章和书籍。不用强求能读懂多少，但要努力读进去。为什么呢？目的不在于从它们中获得启发，而在于，..." />
     
 
     
@@ -90,26 +90,17 @@
         <div class="post_page">
             <div class="post animate__animated animate__fadeInDown">
                 <div class="post_title post_detail_title">
-                    <h2><a href='/posts/nitro/'>Nitro: A quick and simple profiler for Go</a></h2>
-                    <span class="date">2013.06.21</span>
+                    <h2><a href='/posts/notes-11491374/'>构建同步一个示例</a></h2>
+                    <span class="date">0001.01.01</span>
                 </div>
-                <div class="post_content markdown"><p>刚开始我很好奇，为什么我把长地址 A 转换为短地址 B，然后用 B 去访问居然还是 A 地址的内容，浏览器是怎么做到的？
-通过上面的请求过程示例，相信大家应该大概理解了请求短地址的原理了。
-在百度短地址服务中，我们将 <a href="http://www.veryitman.com/">http://www.veryitman.com/</a> 转换为 <a href="https://dwz.cn/hnmau4Zs">https://dwz.cn/hnmau4Zs</a>  ，此时百度短地址服务维持了 短-长 地址的映射关系了而且是唯一的，当我们去访问 <a href="https://dwz.cn/hnmau4Zs">https://dwz.cn/hnmau4Zs</a> ，其实请求的是百度短地址服务，该服务将短地址对应的长地址（放在响应头的 Location 中）返回给我们的浏览器，并返回 302 状态码，此时浏览器就重定向到了 <a href="http://www.veryitman.com/">http://www.veryitman.com/</a> 这个网址上了。
-简单总结一下其步骤如下：
-Step-1、用户在浏览器里输入 <a href="https://dwz.cn/hnmau4Zs">https://dwz.cn/hnmau4Zs</a>  这个网址去访问;
-Step-2、浏览器解析 DNS，获取该域名对应的 IP 地址;
-Step-3、获取到 IP 后，浏览器发送 HTTP GET 请求查询 hnmau4Zs 并获取到 <a href="https://dwz.cn/hnmau4Zs">https://dwz.cn/hnmau4Zs</a>  对应的长地址;
-Step-4、HTTP 通过 302 状态码转到去请求对应的长地址  <a href="http://www.veryitman.com/">http://www.veryitman.com/</a> 上面了。
-我把 <a href="http://www.veryitman.com/">http://www.veryitman.com/</a> 放到百度和微博的短地址生成分别是：
-// 百度短地址
-<a href="https://dwz.cn/hnmau4Zs">https://dwz.cn/hnmau4Zs</a>
-复制代码// 微博段地址
-<a href="http://1t.click/aMtD">http://1t.click/aMtD</a>
-复制代码可以看出百度生成较复杂，首先协议变成了 HTTPS，其次生成代码是 8 位（hnmau4Zs），而微博生成的是 4 位（aMtD）代码。
-短地址码一般都是由26个大写字母  A-Z 、26个小写字母 a-z 和10个数字  0-9 共62个字符随机组合而成，那么可以这样来生成短地址码，我们定义一个62进制，把这62个字符按照10进制数转成62进制数，那么就可以得到每个字符对应的62进制数了。同理，将短地址还原的时候把62进制转换为对应的10进制就可以了。
-根据上面算法，可以看出百度可以支持 62^8 个短地址，微博可以支持 62^4 个短地址。
-关于短地址生成的算法，大家可以用 SpringBoot 自己撸一个或者去网上找找别人已经实现的。</p>
+                <div class="post_content markdown"><p>刚开始我很好奇，为什么我把长地址 A 转换为 自己撸一个或者去网上找找别人已经实现的。<br />经常有读者问我：如何才能提高自己的深度思考能力？<br />
+<br />一般情况下，我总会给一个最简单的建议：多读一些复杂的、需要费脑子的文章和书籍。不用强求能读懂多少，但要努力读进去。<br />
+<br />为什么呢？目的不在于从它们中获得启发，而在于，通过这种方式，锻炼我们的前额叶，让它逐渐习惯这种「需要动脑」的模式。从而，当我们遇到问题时，能够快速让它运转起来。**<br />
+<br />一旦形成习惯，「深度思考」对于你而言，就不再是「深度思考」了 —— 它变成了一件非常自然、无需费力干涉的事情。<br />
+<br />就像许多老读者，最常给我的反馈就是：<br />
+<br />自从建立了阅读和思考的正确习惯之后，回过头看以前常读的文章，总觉得寡淡无味，毫无信息量，根本读不下去，脑子里只有一个念头：「我以前怎么会读这种没脑子的东西？」<br />
+<br />再比如，之前我分享了我的「生活管理系统」，许多读者留言，说实在是太复杂了，没看懂。<br />
+<br />标签：/同步/测试/ok/</p>
 </div>
                 <div class="post_footer">
                     
@@ -118,11 +109,11 @@ Step-4、HTTP 通过 302 状态码转到去请求对应的长地址  <a href="ht
                                 <span class="field tags">
                                     <i class="ri-stack-line"></i>
                                     
-                                    <a href="https://sgo.cool/tags/development/">Development</a>
+                                    <a href="https://sgo.cool/tags/%E5%90%8C%E6%AD%A5/">同步</a>
                                     
-                                    <a href="https://sgo.cool/tags/go/">Go</a>
+                                    <a href="https://sgo.cool/tags/%E6%B5%8B%E8%AF%95/">测试</a>
                                     
-                                    <a href="https://sgo.cool/tags/profiling/">profiling</a>
+                                    <a href="https://sgo.cool/tags/ok/">ok</a>
                                     
                                 </span>
                         </div>
@@ -136,19 +127,12 @@ Step-4、HTTP 通过 302 状态码转到去请求对应的长地址  <a href="ht
                 <div class="pagination__buttons">
                     
                     <span class="button previous">
-        <a href="https://sgo.cool/posts/post8/">
+        <a href="https://sgo.cool/posts/nitro/">
           <span class="button__icon">«</span>
-          <span class="button__text">构建 Go 应用的一个示例888888888</span>
+          <span class="button__text">Nitro: A quick and simple profiler for Go</span>
         </a>
       </span>
                     
-                    
-                    <span class="button next">
-        <a href="https://sgo.cool/posts/notes-11491374/">
-          <span class="button__text">构建同步一个示例</span>
-          <span class="button__icon">»</span>
-        </a>
-      </span>
                     
                 </div>
             </div>

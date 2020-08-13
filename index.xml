@@ -115,5 +115,14 @@ The theme includes:
       <description>刚开始我很好奇，为什么我把长地址 A 转换为短地址 B，然后用 B 去访问居然还是 A 地址的内容，浏览器是怎么做到的？ 通过上面的请求过程示例，相信大家应该大概理解了请求短地址的原理了。 在百度短地址服务中，我们将 http://www.veryitman.com/</description>
     </item>
     
+    <item>
+      <title>构建同步一个示例</title>
+      <link>https://sgo.cool/posts/notes-11491374/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sgo.cool/posts/notes-11491374/</guid>
+      <description>刚开始我很好奇，为什么我把长地址 A 转换为 自己撸一个或者去网上找找别人已经实现的。 经常有读者问我：如何才能提高自己的深度思考能力？ 一般情况下，我总会给一个最简单的建议：多读一些复杂的、需要费脑子的文章和</description>
+    </item>
+    
   </channel>
 </rss>
