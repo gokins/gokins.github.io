@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>产品原型 on 思°</title>
-    <link>https://blogcool.gitkin.com/categories/%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B/</link>
+    <link>https://sgo.cool/categories/%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B/</link>
     <description>Recent content in 产品原型 on 思°</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 25 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blogcool.gitkin.com/categories/%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sgo.cool/categories/%E4%BA%A7%E5%93%81%E5%8E%9F%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>构建 Go 应用的一个示例888888888</title>
-      <link>https://blogcool.gitkin.com/posts/post8/</link>
+      <link>https://sgo.cool/posts/post8/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blogcool.gitkin.com/posts/post8/</guid>
+      <guid>https://sgo.cool/posts/post8/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为 自己撸一个或者去网上找找别人已经实现的。 经常有读者问我：如何才能提高自己的深度思考能力？ 一般情况下，我总会给一个最简单的建议：多读一些复杂的、需要费脑子的文章和</description>
     </item>
     

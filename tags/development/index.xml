@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on 思°</title>
-    <link>https://blogcool.gitkin.com/tags/development/</link>
+    <link>https://sgo.cool/tags/development/</link>
     <description>Recent content in Development on 思°</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 21 Jun 2013 11:27:27 -0400</lastBuildDate>
     
-	<atom:link href="https://blogcool.gitkin.com/tags/development/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sgo.cool/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Nitro: A quick and simple profiler for Go</title>
-      <link>https://blogcool.gitkin.com/posts/nitro/</link>
+      <link>https://sgo.cool/posts/nitro/</link>
       <pubDate>Fri, 21 Jun 2013 11:27:27 -0400</pubDate>
       
-      <guid>https://blogcool.gitkin.com/posts/nitro/</guid>
+      <guid>https://sgo.cool/posts/nitro/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为短地址 B，然后用 B 去访问居然还是 A 地址的内容，浏览器是怎么做到的？ 通过上面的请求过程示例，相信大家应该大概理解了请求短地址的原理了。 在百度短地址服务中，我们将 http://www.veryitman.com/</description>
     </item>
     
