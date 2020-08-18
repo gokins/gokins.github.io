@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://sgo.cool/posts/</loc>
+    <lastmod>2020-08-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sgo.cool/</loc>
+    <lastmod>2020-08-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sgo.cool/posts/notes-11855286/</loc>
+    <lastmod>2020-08-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sgo.cool/about/</loc>
     <lastmod>2019-01-25T00:00:00+00:00</lastmod>
   </url>
@@ -19,11 +34,6 @@
   
   <url>
     <loc>https://sgo.cool/tags/hugo/</loc>
-    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sgo.cool/posts/</loc>
     <lastmod>2019-01-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -54,11 +64,6 @@
   
   <url>
     <loc>https://sgo.cool/tags/%E5%8E%9F%E5%9E%8B/</loc>
-    <lastmod>2019-01-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://sgo.cool/</loc>
     <lastmod>2019-01-25T00:00:00+00:00</lastmod>
   </url>
   
@@ -166,10 +171,6 @@
   
   <url>
     <loc>https://sgo.cool/tags/%E6%B5%8B%E8%AF%95/</loc>
-  </url>
-  
-  <url>
-    <loc>https://sgo.cool/posts/notes-11855286/</loc>
   </url>
   
 </urlset>
