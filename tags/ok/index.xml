@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ok on 幽灵</title>
-    <link>https://u0.pm/tags/ok/</link>
-    <description>Recent content in ok on 幽灵</description>
+    <title>ok on 重構</title>
+    <link>https://cgo.cool/tags/ok/</link>
+    <description>Recent content in ok on 重構</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://u0.pm/tags/ok/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://cgo.cool/tags/ok/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>构建同步一个示例</title>
-      <link>https://u0.pm/posts/notes-11491374/</link>
+      <link>https://cgo.cool/posts/notes-11491374/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://u0.pm/posts/notes-11491374/</guid>
+      <guid>https://cgo.cool/posts/notes-11491374/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为 自己撸一个或者去网上找找别人已经实现的。 经常有读者问我：如何才能提高自己的深度思考能力？&amp;hellip;. 一般情况下，我总会给一个最简单的建议：多读一些复杂的、</description>
     </item>
     
