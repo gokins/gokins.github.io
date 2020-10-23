@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cgo.cool/posts/notes-14859533/</loc>
+    <lastmod>2020-10-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cgo.cool/posts/</loc>
-    <lastmod>2020-09-22T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cgo.cool/</loc>
+    <lastmod>2020-10-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -24,11 +34,6 @@
   
   <url>
     <loc>https://cgo.cool/posts/notes-13523560/</loc>
-    <lastmod>2020-09-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cgo.cool/</loc>
     <lastmod>2020-09-22T00:00:00+00:00</lastmod>
   </url>
   

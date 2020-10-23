@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 思构</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 22 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://cgo.cool/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GFS</title>
+      <link>https://cgo.cool/posts/notes-14859533/</link>
+      <pubDate>Fri, 23 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/posts/notes-14859533/</guid>
+      <description>附件。</description>
+    </item>
     
     <item>
       <title>寻找一种易于理解的一致性算法（扩展版）</title>
