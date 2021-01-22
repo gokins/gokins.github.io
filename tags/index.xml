@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 思构</title>
+    <link>https://cgo.cool/tags/</link>
+    <description>Recent content in Tags on 思构</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 22 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://cgo.cool/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>raft</title>
+      <link>https://cgo.cool/tags/raft/</link>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/raft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>分布式</title>
+      <link>https://cgo.cool/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</link>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>算法</title>
+      <link>https://cgo.cool/tags/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/%E7%AE%97%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ok</title>
+      <link>https://cgo.cool/tags/ok/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/ok/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>同步</title>
+      <link>https://cgo.cool/tags/%E5%90%8C%E6%AD%A5/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/%E5%90%8C%E6%AD%A5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>测试</title>
+      <link>https://cgo.cool/tags/%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>多少</title>
+      <link>https://cgo.cool/tags/%E5%A4%9A%E5%B0%91/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/%E5%A4%9A%E5%B0%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>大小</title>
+      <link>https://cgo.cool/tags/%E5%A4%A7%E5%B0%8F/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/%E5%A4%A7%E5%B0%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>文案</title>
+      <link>https://cgo.cool/tags/%E6%96%87%E6%A1%88/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/%E6%96%87%E6%A1%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://cgo.cool/tags/hugo/</link>
+      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>分析</title>
+      <link>https://cgo.cool/tags/%E5%88%86%E6%9E%90/</link>
+      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/%E5%88%86%E6%9E%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>原型</title>
+      <link>https://cgo.cool/tags/%E5%8E%9F%E5%9E%8B/</link>
+      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/%E5%8E%9F%E5%9E%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>技巧</title>
+      <link>https://cgo.cool/tags/%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/%E6%8A%80%E5%B7%A7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>研究</title>
+      <link>https://cgo.cool/tags/%E7%A0%94%E7%A9%B6/</link>
+      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/%E7%A0%94%E7%A9%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>规范</title>
+      <link>https://cgo.cool/tags/%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cgo.cool/tags/%E8%A7%84%E8%8C%83/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://cgo.cool/tags/development/</link>
+      <pubDate>Fri, 21 Jun 2013 11:27:27 -0400</pubDate>
+      
+      <guid>https://cgo.cool/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://cgo.cool/tags/go/</link>
+      <pubDate>Fri, 21 Jun 2013 11:27:27 -0400</pubDate>
+      
+      <guid>https://cgo.cool/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>profiling</title>
+      <link>https://cgo.cool/tags/profiling/</link>
+      <pubDate>Fri, 21 Jun 2013 11:27:27 -0400</pubDate>
+      
+      <guid>https://cgo.cool/tags/profiling/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
