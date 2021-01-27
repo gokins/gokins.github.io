@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*basic styles starts*/
 html {
   background-color: #f7f7f7;
@@ -131,15 +132,19 @@ hr {
 
 .header {
   width: 720px;
-  padding: 20px 0 60px 0;
+  padding: 0 0 10px 0;
   margin: 0 auto;
   background-size: cover;
 }
 
 .header .site_title_container {
   padding: 0 0;
+  overflow: hidden;
 }
-
+.header .site_title_container .site_title{
+  display: inline-block;
+  overflow: hidden;
+}
 .header .site_title_container h1 {
   line-height: 1;
   margin: 0;
@@ -152,15 +157,11 @@ hr {
 }
 
 .header .site_title_container .site_title a {
-  font-size: 42px;
-  width: 130px;
+  font-size: 36px;
+  width: 80px;
   letter-spacing: 2px;
   line-height: 1.2;
   color: #000000;
-}
-
-.header .site_title_container .site_title a:hover {
-  color: #666666;
 }
 
 .header .site_title_container .site_title a span {
@@ -168,17 +169,6 @@ hr {
   font-style: normal;
   position: relative;
 
-}
-.header .site_title_container .site_title a span:after{
-  font-style: normal;
-  color: #909090;
-  content: "👻";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 33%;
-  overflow: hidden;
-  z-index: 10000;
 }
 
 .header .site_title_container .description {
@@ -217,12 +207,12 @@ hr {
 
 .post {
   background-color: #ffffff;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .post .post_title h2 {
   letter-spacing: 1px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1;
   font-weight: 600;
   color: #1f1f1f;
@@ -263,7 +253,7 @@ hr {
 .post .post_content p {
   line-height: 2em;
   letter-spacing: 0.2px;
-  margin-bottom: 20px;
+  margin-bottom: 2px;
 }
 
 .post .post_content a {
@@ -277,7 +267,7 @@ hr {
 }
 
 .post .post_footer {
-  padding: 20px 0;
+  padding: 5px 0;
   border-bottom: 1px solid #f3f3f3;
 }
 
@@ -321,6 +311,10 @@ hr {
   font-size: 1em;
 }
 
+.page_tags ul li a{
+  font-weight: bold;
+}
+
 .page_tags .terms_count {
   display: inline-block;
   position: relative;
@@ -328,6 +322,7 @@ hr {
   right: -2px;
   color: #c5c5c5;
   font-size: 12px;
+  font-weight: normal;
 }
 
 .page_tags ul {
@@ -409,7 +404,7 @@ hr {
 }
 
 .list_with_title .listing {
-  margin: 0 0 50px 0;
+  margin: 0 0 10px 0;
   padding: 0;
   line-height: 2.1;
 }
