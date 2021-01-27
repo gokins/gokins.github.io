@@ -1,167 +1,185 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 思构</title>
-    <link>https://cgo.cool/posts/</link>
-    <description>Recent content in Posts on 思构</description>
+    <title>Posts on 星星之火</title>
+    <link>https://xxzh.dev/posts/</link>
+    <description>Recent content in Posts on 星星之火</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 23 Oct 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://cgo.cool/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xxzh.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The Google File System（译）</title>
-      <link>https://cgo.cool/posts/notes-14859533/</link>
+      <link>https://xxzh.dev/posts/notes-14859533/</link>
       <pubDate>Fri, 23 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/notes-14859533/</guid>
+      <guid>https://xxzh.dev/posts/notes-14859533/</guid>
       <description>摘要 我们设计并实现了 Google GFS 文件系统，一个面向大规模数据密集型应用的、可伸缩的分布式文件系统。 GFS 虽然运行在廉价的普遍硬件设备上，但是它依然了提供灾难冗余的能力，为大量客户机提供了高性能的 服务。 虽然 GFS 的设计</description>
     </item>
     
     <item>
       <title>寻找一种易于理解的一致性算法（扩展版）</title>
-      <link>https://cgo.cool/posts/notes-13523560/</link>
+      <link>https://xxzh.dev/posts/notes-13523560/</link>
       <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/notes-13523560/</guid>
+      <guid>https://xxzh.dev/posts/notes-13523560/</guid>
       <description>摘要 Raft 是一种为了管理复制日志的一致性算法。它提供了和 Paxos 算法相同的功能和性能，但是它的算法结构和 Paxos 不同，使得 Raft 算法更加容易理解并且更容易构建实际的系统。为了提升可理解性，Raft 将一致性算法分解成了几个</description>
     </item>
     
     <item>
       <title>这是一个新建文档</title>
-      <link>https://cgo.cool/posts/notes-11855286/</link>
+      <link>https://xxzh.dev/posts/notes-11855286/</link>
       <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/notes-11855286/</guid>
+      <guid>https://xxzh.dev/posts/notes-11855286/</guid>
       <description>测试看看 是否一切正常， 但是我觉得是的。&amp;hellip; 本课程包括4大模块，每个模块都会按照基础篇、案例篇和分析篇的方式来呈现。 Page Cache管理模块，会带你重点分析如何更好地利用Page Cache来减少</description>
     </item>
     
     <item>
       <title>构建同步一个示例</title>
-      <link>https://cgo.cool/posts/notes-11491374/</link>
+      <link>https://xxzh.dev/posts/notes-11491374/</link>
       <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/notes-11491374/</guid>
+      <guid>https://xxzh.dev/posts/notes-11491374/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为 自己撸一个或者去网上找找别人已经实现的。 经常有读者问我：如何才能提高自己的深度思考能力？&amp;hellip;. 一般情况下，我总会给一个最简单的建议：多读一些复杂的、</description>
     </item>
     
     <item>
       <title>当我们再讨论中台的时候，我们到底再谈论什么</title>
-      <link>https://cgo.cool/posts/notes-11555359/</link>
+      <link>https://xxzh.dev/posts/notes-11555359/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/notes-11555359/</guid>
+      <guid>https://xxzh.dev/posts/notes-11555359/</guid>
       <description>1，首先。 2，其次。 3。ddd 4，你看同步了吧 是的。呵呵呵&amp;hellip;..呵。 你看这是？？ 大师。啊。 最后。 /文案/大小/多少/</description>
     </item>
     
     <item>
       <title>Hello Friend</title>
-      <link>https://cgo.cool/posts/hello/</link>
+      <link>https://xxzh.dev/posts/hello/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/hello/</guid>
+      <guid>https://xxzh.dev/posts/hello/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur ipsum dui, aliquet nec commodo at, tristique eget ante. Donec quis dolor nec nunc mollis interdum vel in purus. Sed vitae leo scelerisque, sollicitudin elit sed, congue ante. In augue nisl, vestibulum commodo est a, tristique porttitor est. Proin laoreet iaculis ornare. Nullam ut neque quam.
  Fusce pharetra suscipit orci nec tempor. Quisque vitae sem sit amet sem mollis consequat. Sed at imperdiet lorem. Vestibulum pharetra faucibus odio, ac feugiat tellus sollicitudin at. Pellentesque varius tristique mi imperdiet dapibus.</description>
     </item>
     
     <item>
       <title>构建 Go 应用的一个示例</title>
-      <link>https://cgo.cool/posts/first/</link>
+      <link>https://xxzh.dev/posts/first/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/first/</guid>
+      <guid>https://xxzh.dev/posts/first/</guid>
       <description>使用多阶段构建 多阶段构建可以有效减小镜像体积，特别是对于需编译语言而言，一个应用的构建过程往往如下 安装编译工具 安装第三方库依赖 编译构建应用 而在前两步会有大量的镜像体积冗余，使用多阶段构建可以避免这一问</description>
     </item>
     
     <item>
       <title>构建 Go 应用的一个示例11111</title>
-      <link>https://cgo.cool/posts/post1/</link>
+      <link>https://xxzh.dev/posts/post1/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/post1/</guid>
+      <guid>https://xxzh.dev/posts/post1/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为短地址 B，然后用 B 去访问居然还是 A 地址的内容，浏览器是怎么做到的？ 通过上面的请求过程示例，相信大家应该大概理解了请求短地址的原理了。 在百度短地址服务中，我们将 http://www.veryitman.com/</description>
     </item>
     
     <item>
       <title>构建 Go 应用的一个示例333333</title>
-      <link>https://cgo.cool/posts/post3/</link>
+      <link>https://xxzh.dev/posts/post3/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/post3/</guid>
+      <guid>https://xxzh.dev/posts/post3/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为短地址 B，然后用 B 去访问居然还是 A 地址的内容，浏览器是怎么做到的？ 通过上面的请求过程示例，相信大家应该大概理解了请求短地址的原理了。 在百度短地址服务中，我们将 http://www.veryitman.com/</description>
     </item>
     
     <item>
       <title>构建 Go 应用的一个示例44444444</title>
-      <link>https://cgo.cool/posts/post4/</link>
+      <link>https://xxzh.dev/posts/post4/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/post4/</guid>
+      <guid>https://xxzh.dev/posts/post4/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为短地址 B，然后用 B 去访问居然还是 A 地址的内容，浏览器是怎么做到的？ 通过上面的请求过程示例，相信大家应该大概理解了请求短地址的原理了。 在百度短地址服务中，我们将 http://www.veryitman.com/</description>
     </item>
     
     <item>
       <title>构建 Go 应用的一个示例55555555</title>
-      <link>https://cgo.cool/posts/post5/</link>
+      <link>https://xxzh.dev/posts/post5/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/post5/</guid>
+      <guid>https://xxzh.dev/posts/post5/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为短地址 B，然后用 B 去访问居然还是 A 地址的内容，浏览器是怎么做到的？ 通过上面的请求过程示例，相信大家应该大概理解了请求短地址的原理了。 在百度短地址服务中，我们将 http://www.veryitman.com/</description>
     </item>
     
     <item>
       <title>构建 Go 应用的一个示例66666665</title>
-      <link>https://cgo.cool/posts/post6/</link>
+      <link>https://xxzh.dev/posts/post6/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/post6/</guid>
+      <guid>https://xxzh.dev/posts/post6/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为短地址 B，然后用 B 去访问居然还是 A 地址的内容，浏览器是怎么做到的？ 通过上面的请求过程示例，相信大家应该大概理解了请求短地址的原理了。 在百度短地址服务中，我们将 http://www.veryitman.com/</description>
     </item>
     
     <item>
       <title>构建 Go 应用的一个示例6777777777</title>
-      <link>https://cgo.cool/posts/post7/</link>
+      <link>https://xxzh.dev/posts/post7/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/post7/</guid>
+      <guid>https://xxzh.dev/posts/post7/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为 自己撸一个或者去网上找找别人已经实现的。</description>
     </item>
     
     <item>
       <title>构建 Go 应用的一个示例888888888</title>
-      <link>https://cgo.cool/posts/post8/</link>
+      <link>https://xxzh.dev/posts/post8/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/post8/</guid>
+      <guid>https://xxzh.dev/posts/post8/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为 自己撸一个或者去网上找找别人已经实现的。 经常有读者问我：如何才能提高自己的深度思考能力？ 一般情况下，我总会给一个最简单的建议：多读一些复杂的、需要费脑子的文章和</description>
     </item>
     
     <item>
       <title>Nitro: A quick and simple profiler for Go</title>
-      <link>https://cgo.cool/posts/nitro/</link>
+      <link>https://xxzh.dev/posts/nitro/</link>
       <pubDate>Fri, 21 Jun 2013 11:27:27 -0400</pubDate>
       
-      <guid>https://cgo.cool/posts/nitro/</guid>
+      <guid>https://xxzh.dev/posts/nitro/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为短地址 B，然后用 B 去访问居然还是 A 地址的内容，浏览器是怎么做到的？ 通过上面的请求过程示例，相信大家应该大概理解了请求短地址的原理了。 在百度短地址服务中，我们将 http://www.veryitman.com/</description>
     </item>
     
     <item>
-      <title>如何防止技术作恶？</title>
-      <link>https://cgo.cool/posts/notes-13570771/</link>
+      <title>BigTable</title>
+      <link>https://xxzh.dev/posts/notes-14859551/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/notes-13570771/</guid>
+      <guid>https://xxzh.dev/posts/notes-14859551/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Map-Reduce</title>
+      <link>https://xxzh.dev/posts/notes-14859541/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xxzh.dev/posts/notes-14859541/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>如何防止技术作恶？</title>
+      <link>https://xxzh.dev/posts/notes-13570771/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xxzh.dev/posts/notes-13570771/</guid>
       <description></description>
     </item>
     
     <item>
       <title>技术是如何作恶的？</title>
-      <link>https://cgo.cool/posts/notes-13570757/</link>
+      <link>https://xxzh.dev/posts/notes-13570757/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/notes-13570757/</guid>
+      <guid>https://xxzh.dev/posts/notes-13570757/</guid>
       <description></description>
     </item>
     

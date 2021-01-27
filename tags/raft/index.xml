@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>raft on 思构</title>
-    <link>https://cgo.cool/tags/raft/</link>
-    <description>Recent content in raft on 思构</description>
+    <title>raft on 星星之火</title>
+    <link>https://xxzh.dev/tags/raft/</link>
+    <description>Recent content in raft on 星星之火</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 22 Sep 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://cgo.cool/tags/raft/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xxzh.dev/tags/raft/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>寻找一种易于理解的一致性算法（扩展版）</title>
-      <link>https://cgo.cool/posts/notes-13523560/</link>
+      <link>https://xxzh.dev/posts/notes-13523560/</link>
       <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/notes-13523560/</guid>
+      <guid>https://xxzh.dev/posts/notes-13523560/</guid>
       <description>摘要 Raft 是一种为了管理复制日志的一致性算法。它提供了和 Paxos 算法相同的功能和性能，但是它的算法结构和 Paxos 不同，使得 Raft 算法更加容易理解并且更容易构建实际的系统。为了提升可理解性，Raft 将一致性算法分解成了几个</description>
     </item>
     

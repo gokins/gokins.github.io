@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>杂技浅尝 on 思构</title>
-    <link>https://cgo.cool/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/</link>
-    <description>Recent content in 杂技浅尝 on 思构</description>
+    <title>杂技浅尝 on 星星之火</title>
+    <link>https://xxzh.dev/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/</link>
+    <description>Recent content in 杂技浅尝 on 星星之火</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 25 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://cgo.cool/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xxzh.dev/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>构建 Go 应用的一个示例6777777777</title>
-      <link>https://cgo.cool/posts/post7/</link>
+      <link>https://xxzh.dev/posts/post7/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://cgo.cool/posts/post7/</guid>
+      <guid>https://xxzh.dev/posts/post7/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为 自己撸一个或者去网上找找别人已经实现的。</description>
     </item>
     
