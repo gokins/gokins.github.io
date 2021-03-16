@@ -66,19 +66,6 @@
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://xxzh.dev/about/</link>
-      <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://xxzh.dev/about/</guid>
-      <description>Hi there My name is Radek and I&amp;rsquo;m the author of this theme. I made it to help you present your ideas easier.
-We all know how hard is to start something on the web, especially these days. You need to prepare a bunch of stuff, configure them and when that’s done — create the content.
-This theme is pretty basic and covers all of the essentials. All you have to do is start typing!
-The theme includes:
- 5 duotone themes, depending on your preferences (orange, red, blue, green, pink) Fira Code as default monospaced font. It&amp;rsquo;s gorgeous! realy nice, custom duotone syntax highlighting based on PrismJS mobile friendly layout  So, there you have it&amp;hellip; enjoy!</description>
-    </item>
-    
-    <item>
       <title>Hello Friend</title>
       <link>https://xxzh.dev/posts/hello/</link>
       <pubDate>Fri, 25 Jan 2019 00:00:00 +0000</pubDate>
@@ -158,6 +145,15 @@ The theme includes:
       
       <guid>https://xxzh.dev/posts/post8/</guid>
       <description>刚开始我很好奇，为什么我把长地址 A 转换为 自己撸一个或者去网上找找别人已经实现的。 经常有读者问我：如何才能提高自己的深度思考能力？ 一般情况下，我总会给一个最简单的建议：多读一些复杂的、需要费脑子的文章和</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://xxzh.dev/about/</link>
+      <pubDate>Sun, 25 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://xxzh.dev/about/</guid>
+      <description>关于本博客 博主是一名软件工程师，本科专业为计算机，研究生专业为工程管理(工程管理+金融交叉学科)。坚定的毛泽东思想、共产主义信仰者。博客名称即来自教员的《星星之火，可以燎原》。 博客内容主要是分享一些读</description>
     </item>
     
     <item>
