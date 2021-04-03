@@ -6,10 +6,28 @@
     <description>Recent content in Tags on 星星之火</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 13 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xxzh.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>golang</title>
+      <link>https://xxzh.dev/tags/golang/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xxzh.dev/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工具链</title>
+      <link>https://xxzh.dev/tags/%E5%B7%A5%E5%85%B7%E9%93%BE/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xxzh.dev/tags/%E5%B7%A5%E5%85%B7%E9%93%BE/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>毛泽东思想</title>
