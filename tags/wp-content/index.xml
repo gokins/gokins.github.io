@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wp-content on 星星之火</title>
+    <link>https://xxzh.dev/tags/wp-content/</link>
+    <description>Recent content in wp-content on 星星之火</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 18 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://xxzh.dev/tags/wp-content/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>v2ray科学上网</title>
+      <link>https://xxzh.dev/posts/blog-11855286/</link>
+      <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://xxzh.dev/posts/blog-11855286/</guid>
+      <description>ssr作为一个代理工具，为广大网友打开谷歌，youtube等网站做出了巨大的贡献，但是现在不稳定了，即出现了封ip的情况，所以建议使用更先进的v2ray。 v2ry是一款非常优秀的超级上网工具，性能更好</description>
+    </item>
+    
+  </channel>
+</rss>
