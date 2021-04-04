@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Gek" />
+	
+	
+	
+	<title>分布式系统的问题 ｜ 星星之火</title>
+	
+    
+    
+    <meta name="description" content="1、起源自从第一台冯诺依曼体系的通用电子计算机“ENIAC”问世以来，以计算机为核心的信息革命深刻地影响了二十世纪后半叶，并主导了二十一世纪初的科技竞争浪潮。尤其是二十世纪八九十年代互联网的兴起后，计算机开始逐渐渗透到我们生活的方方面面。我们都知道，早期电子计算机都是为科学计算的任务而产生的，..." />
+    
+
+    
+    
+    <meta name="keywords" content="项目, 管理, 技术, 编程, 架构, 效率, 商业" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blogcool.gitkin.com/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blogcool.gitkin.com/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blogcool.gitkin.com/css/zstyle.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blogcool.gitkin.com/css/highlight.css" />
+    
+    
+</head>
+
+
+<body>
+<div class="main animate__animated animate__fadeInDown">
+    <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">文章</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">分类</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+    <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="/">
+                    <span>星星之火</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">关注工程实践、效率和商业</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/gokins" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/aiwanfulishe" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="content">
+        <div class="post_page">
+            <div class="post animate__animated animate__fadeInDown">
+                <div class="post_title post_detail_title">
+                    <h2><a href='/posts/blog-34139169/'>分布式系统的问题</a></h2>
+                    <span class="date">2021.04.04</span>
+                </div>
+                <div class="post_content markdown"><p><a name="8kPyV"></a></p>
+<h3 id="1起源">1、起源</h3>
+<p>自从第一台冯诺依曼体系的通用电子计算机“ENIAC”问世以来，以计算机为核心的信息革命深刻地影响了二十世纪后半叶，并主导了二十一世纪初的科技竞争浪潮。尤其是二十世纪八九十年代互联网的兴起后，计算机开始逐渐渗透到我们生活的方方面面。<br />我们都知道，早期电子计算机都是为科学计算的任务而产生的，比如计算弹道，射程等。从晶体管到集成电路，再到超大规模集成电路，计算机体积在缩小的同时，单机计算能力也突飞猛进。但单机能力再强，基于硬件的限制也不可能在有限的时间内获得想要的“计算结果”，因此计算机之间相互协作成为必然。<br />通过网络连接而形成互联网体系，天然具备庞大的用户基数，海量的用户请求等特点。这是一场用户群体和计算机群体之间的相互对抗，这是一场没完没了的“战争”。分布式系统由此而生。<br /></p>
+<p><a name="GOc0q"></a></p>
+<h3 id="2分布式系统">2、分布式系统</h3>
+<p>在亚当·斯密1776年出版的《An Inquiry into the Nature and Causes of the Wealth of Nations》（中文译作《国民财富的性质和原因的研究》简称国富论。）书中提到市场和分工的效率，在工业革命中得到印证。实际上在21世纪的今天，分工仍然是大工业时代的主要模式。<br />从互联网的本质来说，和大工业时代的工厂并无本质区别。只是大机器变成了计算机，工厂流水线变成了办公室，工人变成了工程师，工业产品变为互联网服务。<br />为了获取优势市场地位（实际上是为了垄断），互联网的模式的“大机器生产”由此而展开，那就是计算机如何稳定高效的提供互联网服务，所以分布式系统本质是一种计算机之间的分工和协作。<br /></p>
+<p><a name="lb4DJ"></a></p>
+<h3 id="3分布式系统要解决的问题">3、分布式系统要解决的问题</h3>
+<p>既然分布式系统本质是一种计算机之间的分工和协作，那么这种组织方式肯定也会带来诸多问题，用一个例子足以来说明：</p>
+<p>话说在18世纪末的英格兰，一名老头(可能是头发不多的工程师)退休后为了打法无聊的退休生活，在自家的房子里开了一家小小的奶茶店。如果平时生意不忙，一个人可以应付的来。但是当遇到旺季的时候，门口就排起了队伍，客人颇有怨言。为此老头招了一个员工，于是排队情况大大缓解。没几天奶茶口碑不错，更多客人蜂拥而来，唯一的员工又做奶茶又打扫卫生，10107的工作方式，让他萌生辞职回家念头。老头也看在眼里，一边安慰许愿，一边决定继续在招一个帮手。但是随着客人越来越多，门店太小，这时增加员工已经不能解决问题了，这时老头子想到扩大门面和增加分店两种方案。</p>
+<p>扩大门面的好处是处理上比较简单，隔壁房间砸通就行。但是如果客人一直增加，一直砸墙也不是办法，毕竟房子地皮都有限。于是老头子决定把隔壁张三和后面老街赵四闲置的房子盘下来，又开了2家分店，原来自己的老店改名叫总店，分店则叫1号分店、2号分店。还是原来的配方，还是原来的味道。老头子很满意。</p>
+<p>然而这时问题来了。一个江湖大佬在总店下了单，然后边接电话边溜达走到了1号分店。于是想从1号分店取奶茶，但分店员工确告诉他请先下单，大佬一怒之下直接叫来500校刀手，强拆了总店并群殴了老头，并告诉老头，你的经营理念太差，简直丢了大英帝国的脸。<br />
+<br />老头子不愧是大风大浪过来的，身子骨硬不说，还有一种不服输的精神。他经过深入思考，认为总店和分店如何有效协作，是至关重要的，并做了如下部署：<br />
+<br />1、总店和分店之间订单信息如何共享，打电话还是发短信，万一手机没信号咋办，万一短信延迟怎么办？（计算机之间通信使用TCP还是UDP、延迟或者抖动怎么办）。<br />2、有一天总店负责同步订单的员工请假了，数据没法互通了咋办？（计算机节点掉线了）<br />
+<br />
+<br />
+<br />
+<br /></p>
+</div>
+                <div class="post_footer">
+                    
+                </div>
+            </div>
+
+            
+            <div class="pagination">
+                <div class="pagination__buttons">
+                    
+                    
+                    <span class="button next">
+        <a href="https://xxzh.dev/posts/blog-11855286/">
+          <span class="button__text">v2ray科学上网</span>
+          <span class="button__icon">»</span>
+        </a>
+      </span>
+                    
+                </div>
+            </div>
+            
+            
+            
+            
+            
+        </div>
+    </div>
+</div>
+<a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+<footer class="footer">
+    <div class="footer_slogan">
+        <span>“ 星星之火，可以燎原 ”</span>
+    </div>
+    <div class="powered_by">
+        本博客由 <a href="https://github.com/gokins/turbo" target="_blank">Turbo</a> 强力驱动.
+    </div>
+</footer>
+
+<script src="https://blogcool.gitkin.com/js/jquery-3.5.1.min.js"></script>
+<link href="https://blogcool.gitkin.com/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blogcool.gitkin.com/js/fancybox.min.js"></script>
+<script src="https://blogcool.gitkin.com/js/zozo.js"></script>
+
+
+
+
+
+</body>
+
+</html>

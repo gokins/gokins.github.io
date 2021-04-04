@@ -6,10 +6,19 @@
     <description>Recent content on 星星之火</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 18 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Apr 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://xxzh.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>分布式系统的问题</title>
+      <link>https://xxzh.dev/posts/blog-34139169/</link>
+      <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xxzh.dev/posts/blog-34139169/</guid>
+      <description>1、起源 自从第一台冯诺依曼体系的通用电子计算机“ENIAC”问世以来，以计算机为核心的信息革命深刻地影响了二十世纪后半叶，并主导了二十一世纪初的科技竞争浪潮。尤其是二十世纪八九十年代互联网的兴起后，计</description>
+    </item>
     
     <item>
       <title>v2ray科学上网</title>
