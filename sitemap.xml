@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://xxzh.dev/posts/</loc>
+    <lastmod>2021-04-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/posts/blog-34139169/</loc>
+    <lastmod>2021-04-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/</loc>
+    <lastmod>2021-04-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/tags/</loc>
+    <lastmod>2020-08-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/tags/v2ray/</loc>
+    <lastmod>2020-08-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/posts/blog-11855286/</loc>
+    <lastmod>2020-08-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</loc>
+    <lastmod>2020-08-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/tags/golang/</loc>
+    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/posts/blog-11447726/</loc>
+    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/tags/%E5%B7%A5%E5%85%B7%E9%93%BE/</loc>
+    <lastmod>2020-08-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/posts/blog-11491374/</loc>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/tags/%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3/</loc>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/tags/%E6%AF%9B%E9%80%89/</loc>
+    <lastmod>2017-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/about/</loc>
+    <lastmod>2017-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xxzh.dev/categories/</loc>
+  </url>
+  
+</urlset>
