@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>分布式系统理论</title>
+      <link>https://xxzh.dev/posts/blog-34254064/</link>
+      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xxzh.dev/posts/blog-34254064/</guid>
+      <description>在分布式系统研究领域有诸多理论，CAP理论提出了一致性、可用性、分区容忍性的取舍问题；Paxos、Raft、2PC、3PC分别给出了一致性的解决方案；Lease机制主要针对网络拥塞或瞬断的情况下，出现</description>
+    </item>
+    
+    <item>
       <title>Go开发之pprof</title>
       <link>https://xxzh.dev/posts/blog-34183680/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
@@ -93,6 +102,15 @@
     </item>
     
     <item>
+      <title>Raft协议的通俗解释</title>
+      <link>https://xxzh.dev/posts/blog-34236469/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xxzh.dev/posts/blog-34236469/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>关于业务开发人员的几点思考</title>
       <link>https://xxzh.dev/posts/blog-34158689/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -107,6 +125,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://xxzh.dev/posts/blog-34148644/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>如何高效地回报工作</title>
+      <link>https://xxzh.dev/posts/blog-34323532/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://xxzh.dev/posts/blog-34323532/</guid>
       <description></description>
     </item>
     
