@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>分布式 on 星星之火</title>
+    <link>https://xxzh.dev/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</link>
+    <description>Recent content in 分布式 on 星星之火</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://xxzh.dev/tags/%E5%88%86%E5%B8%83%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>分布式系统理论</title>
+      <link>https://xxzh.dev/posts/34254064/</link>
+      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xxzh.dev/posts/34254064/</guid>
+      <description>在分布式系统研究领域有诸多理论，CAP理论提出了一致性、可用性、分区容忍性的取舍问题；Paxos、Raft、2PC、3PC分别给出了一致性的解决方案；Lease机制主要针对网络拥塞或瞬断的情况下，出现</description>
+    </item>
+    
+    <item>
+      <title>分布式系统理论</title>
+      <link>https://xxzh.dev/posts/blog-34254064/</link>
+      <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xxzh.dev/posts/blog-34254064/</guid>
+      <description>在分布式系统研究领域有诸多理论，CAP理论提出了一致性、可用性、分区容忍性的取舍问题；Paxos、Raft、2PC、3PC分别给出了一致性的解决方案；Lease机制主要针对网络拥塞或瞬断的情况下，出现</description>
+    </item>
+    
+    <item>
+      <title>分布式系统的问题</title>
+      <link>https://xxzh.dev/posts/34139169/</link>
+      <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://xxzh.dev/posts/34139169/</guid>
+      <description>自从第一台冯诺依曼体系的通用电子计算机“ENIAC”问世以来，以计算机为核心的信息革命深刻地影响了二十世纪后半叶，并主导了二十一世纪初的科技竞争浪潮。尤其是二十世纪八九十年代互联网的兴起后，计算机开始</description>
+    </item>
+    
+  </channel>
+</rss>
