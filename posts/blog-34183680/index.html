@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Gek" />
+	
+	
+	
+	<title>Go开发之pprof ｜ 星星之火</title>
+	
+    
+    
+    <meta name="description" content="一. pprof 数据采样pprof 采样数据主要有三种获取方式:runtime/pprof: 手动调用runtime.StartCPUProfile或者runtime.StopCPUProfile等 API来生成和写入采样文件，灵活性高net/http/pprof: 通过 http 服务获取..." />
+    
+
+    
+    
+    <meta name="keywords" content="项目, 管理, 技术, 编程, 架构, 效率, 商业" />
+    
+
+	
+    
+    <link rel="shortcut icon" href="https://blogcool.gitkin.com/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blogcool.gitkin.com/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blogcool.gitkin.com/css/zstyle.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="https://blogcool.gitkin.com/css/highlight.css" />
+    
+    
+</head>
+
+
+<body>
+<div class="main animate__animated animate__fadeInDown">
+    <div class="nav_container animated fadeInDown">
+    <div class="site_nav" id="site_nav">
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/posts/">文章</a>
+            </li>
+            
+            <li>
+                <a href="/tags/">分类</a>
+            </li>
+            
+            <li>
+                <a href="/about/">关于</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>
+    <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <h1>
+                <a href="/">
+                    <span>星星之火</span>
+                </a>
+            </h1>
+        </div>
+        <div class="description">
+            <p class="sub_title">关注工程实践、效率和商业</p>
+            <div class="my_socials">
+                
+                
+                <a href="https://github.com/gokins" title="github" target="_blank"><i class="ri-github-fill"></i></a>
+                
+                
+                
+                <a href="https://weibo.com/aiwanfulishe" title="weibo" target="_blank"><i class="ri-weibo-fill"></i></a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="content">
+        <div class="post_page">
+            <div class="post animate__animated animate__fadeInDown">
+                <div class="post_title post_detail_title">
+                    <h2><a href='/posts/blog-34183680/'>Go开发之pprof</a></h2>
+                    <span class="date">2021.04.05</span>
+                </div>
+                <div class="post_content markdown"><p><a name="90c052db"></a></p>
+<h3 id="一-pprof-数据采样">一. pprof 数据采样</h3>
+<p>pprof 采样数据主要有三种获取方式:</p>
+<ul>
+<li><strong>runtime/pprof</strong>: 手动调用<code>runtime.StartCPUProfile</code>或者<code>runtime.StopCPUProfile</code>等 API来生成和写入采样文件，灵活性高</li>
+<li><strong>net/http/pprof</strong>: 通过 http 服务获取Profile采样文件，简单易用，适用于对应用程序的整体监控。通过 runtime/pprof 实现</li>
+<li><strong>go test</strong>: 通过 <code>go test -bench . -cpuprofile prof.cpu</code>生成采样文件 适用对函数进行针对性测试
+<a name="user-content-1-1-net-http-pprof"></a></li>
+</ul>
+<h4 id="11-nethttppprof">1.1 net/http/pprof</h4>
+<p>在应用程序中导入<code>import _ &quot;net/http/pprof&quot;</code>，并启动 http server即可:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="s">&#34;localhost:8080&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">))</span>
+<span class="p">}()</span>
+</code></pre></div><p>之后可通过 http://localhost:8080/debug/pprof/CMD 获取对应的采样数据。支持的 CMD 有:</p>
+<ul>
+<li>goroutine: 获取程序当前所有 goroutine 的堆栈信息。</li>
+<li>heap: 包含每个 goroutine 分配大小，分配堆栈等。每分配 runtime.MemProfileRate(默认为512K) 个字节进行一次数据采样。</li>
+<li>threadcreate: 获取导致创建 OS 线程的 goroutine 堆栈</li>
+<li>block: 获取导致阻塞的 goroutine 堆栈(如 channel, mutex 等)，使用前需要先调用 <code>runtime.SetBlockProfileRate</code></li>
+<li>mutex: 获取导致 mutex 争用的 goroutine 堆栈，使用前需要先调用 <code>runtime.SetMutexProfileFraction</code></li>
+</ul>
+<p>以上五个 CMD 都通过<a href="https://github.com/golang/go/blob/release-branch.go1.9/src/runtime/pprof/pprof.go#L135">runtime/pprof Profile</a> 结构体统一管理，以 Lookup 提供统一查询接口，有相似的返回值(goroutine 堆栈)，它们都支持一个 debug URL参数，默认为0，此时返回的采样数据是不可人为解读的函数地址列表，需要结合 pprof 工具才能还原函数名字。     <br />debug=1时，会将函数地址转换为函数名，即脱离 pprof 在浏览器中直接查看。对 goroutine CMD来说，还支持 debug=2，此时将以 unrecovered panic 的格式打印堆栈，可读性更高。如启用<code>net/http/pprof</code>后，http://localhost:8080/debug/pprof/goroutine?debug=2的响应格式为:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">goroutine</span> <span class="mi">18</span> <span class="p">[</span><span class="kd">chan</span> <span class="nx">receive</span><span class="p">,</span> <span class="mi">8</span> <span class="nx">minutes</span><span class="p">]:</span>
+<span class="nx">ngs</span><span class="o">/</span><span class="nx">core</span><span class="o">/</span><span class="nx">glog</span><span class="p">.</span><span class="nf">logWorker</span><span class="p">(</span><span class="mh">0x18b548a</span><span class="p">,</span> <span class="mh">0x4</span><span class="p">,</span> <span class="mh">0x7fff5fbffb0e</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">,</span> <span class="mh">0x3</span><span class="p">,</span> <span class="mh">0xc4200e31a0</span><span class="p">,</span> <span class="mh">0xc4203627c4</span><span class="p">)</span>
+    <span class="o">/</span><span class="nx">Users</span><span class="o">/</span><span class="nx">wudaijun</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">ngs</span><span class="o">/</span><span class="nx">core</span><span class="o">/</span><span class="nx">glog</span><span class="o">/</span><span class="nx">worker</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">43</span> <span class="o">+</span><span class="mh">0x19c</span>
+<span class="nx">created</span> <span class="nx">by</span> <span class="nx">ngs</span><span class="o">/</span><span class="nx">core</span><span class="o">/</span><span class="nx">glog</span><span class="p">.</span><span class="nx">newLogger</span>
+    <span class="o">/</span><span class="nx">Users</span><span class="o">/</span><span class="nx">wudaijun</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">ngs</span><span class="o">/</span><span class="nx">core</span><span class="o">/</span><span class="nx">glog</span><span class="o">/</span><span class="nx">glog</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">51</span> <span class="o">+</span><span class="mh">0xe4</span>
+<span class="nx">goroutine</span> <span class="mi">6</span> <span class="p">[</span><span class="nx">syscall</span><span class="p">,</span> <span class="mi">8</span> <span class="nx">minutes</span><span class="p">]:</span>
+<span class="nx">os</span><span class="o">/</span><span class="nx">signal</span><span class="p">.</span><span class="nf">signal_recv</span><span class="p">(</span><span class="mh">0x0</span><span class="p">)</span>
+    <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">Cellar</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="mf">1.9.1</span><span class="o">/</span><span class="nx">libexec</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">runtime</span><span class="o">/</span><span class="nx">sigqueue</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">131</span> <span class="o">+</span><span class="mh">0xa7</span>
+<span class="nx">os</span><span class="o">/</span><span class="nx">signal</span><span class="p">.</span><span class="nf">loop</span><span class="p">()</span>
+    <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">Cellar</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="mf">1.9.1</span><span class="o">/</span><span class="nx">libexec</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">os</span><span class="o">/</span><span class="nx">signal</span><span class="o">/</span><span class="nx">signal_unix</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">22</span> <span class="o">+</span><span class="mh">0x22</span>
+<span class="nx">created</span> <span class="nx">by</span> <span class="nx">os</span><span class="o">/</span><span class="nx">signal</span><span class="p">.</span><span class="nx">init</span><span class="mf">.0</span>
+    <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">Cellar</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="mf">1.9.1</span><span class="o">/</span><span class="nx">libexec</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">os</span><span class="o">/</span><span class="nx">signal</span><span class="o">/</span><span class="nx">signal_unix</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">28</span> <span class="o">+</span><span class="mh">0x41</span>
+<span class="nx">goroutine</span> <span class="mi">50</span> <span class="p">[</span><span class="k">select</span><span class="p">,</span> <span class="mi">8</span> <span class="nx">minutes</span><span class="p">]:</span>
+<span class="nx">context</span><span class="p">.</span><span class="nx">propagateCancel</span><span class="p">.</span><span class="nf">func1</span><span class="p">(</span><span class="mh">0x1cfcee0</span><span class="p">,</span> <span class="mh">0xc42017a1e0</span><span class="p">,</span> <span class="mh">0x1cf3820</span><span class="p">,</span> <span class="mh">0xc42005b480</span><span class="p">)</span>
+    <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">Cellar</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="mf">1.9.1</span><span class="o">/</span><span class="nx">libexec</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">context</span><span class="o">/</span><span class="nx">context</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">260</span> <span class="o">+</span><span class="mh">0x113</span>
+<span class="nx">created</span> <span class="nx">by</span> <span class="nx">context</span><span class="p">.</span><span class="nx">propagateCancel</span>
+    <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">Cellar</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="mf">1.9.1</span><span class="o">/</span><span class="nx">libexec</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">context</span><span class="o">/</span><span class="nx">context</span><span class="p">.</span><span class="k">go</span><span class="p">:</span><span class="mi">259</span> <span class="o">+</span><span class="mh">0x1da</span>
+<span class="o">...</span>
+</code></pre></div><p>以上几种 Profile 可在 http://localhost:8080/debug/pprof/ 中看到，除此之外，go pprof 的 CMD 还包括:</p>
+<ul>
+<li>cmdline: 获取程序的命令行启动参数</li>
+<li>profile: 获取指定时间内(从请求时开始)的cpuprof，倒计时结束后自动返回。参数: seconds, 默认值为30。cpuprofile 每秒钟采样100次，收集当前运行的 goroutine 堆栈信息。</li>
+<li>symbol: 用于将地址列表转换为函数名列表，地址通过’+’分隔，如 URL/debug/pprof?0x18d067f+0x17933e7</li>
+<li>trace: 对应用程序进行执行追踪，参数: seconds, 默认值1s</li>
+</ul>
+<p>这几个 CMD 因为各种原因没有整合到 Profile 结构中去，但就使用上而言，是没有区别的，URL格式是一致的，因此可以看做一个整体，从各个角度对系统进行数据采样和分析。
+<a name="user-content-1-2-runtime-pprof"></a></p>
+<h4 id="12-runtimepprof">1.2 runtime/pprof</h4>
+<p><code>runtime/pprof</code>提供各种相对底层的 API 用于生成采样数据，一般应用程序更推荐使用<code>net/http/pprof</code>，<code>runtime/pprof</code> 的 API 参考<a href="https://golang.org/pkg/runtime/pprof/">runtime/pprof</a>或 <a href="https://github.com/golang/go/blob/release-branch.go1.9/src/net/http/pprof/pprof.go">http pprof 实现</a>。
+<a name="user-content-1-3-go-test"></a></p>
+<h4 id="13-go-test">1.3 go test</h4>
+<p>通常用<code>net/http/pprof</code>或<code>runtime/pprof</code>对应用进行整体分析，找出热点后，再用<code>go test</code>进行基准测试，进一步确定热点加以优化并对比测试。</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 生成 test 二进制文件， pprof 工具需要用到</span>
+▶ go <span class="nb">test</span> -c -o tmp.test 
+<span class="c1"># 执行基准测试 BenchAbc，并忽略任何单元测试，test flag前面需要加上&#39;test.&#39;前缀</span>
+▶ tmp.test -test.bench BenchAbc -test.run XXX test.cpuprofile cpu.prof     
+<span class="c1"># 与上面两条命令等价，只不过没有保留 test 二进制文件</span>
+▶ go <span class="nb">test</span> -bench BenchAbc -run XXX -cpuprofile<span class="o">=</span>cpu.prof .
+</code></pre></div><p><code>go test</code>可以直接加<code>-cpuprofile</code> <code>-mutexprofilefraction</code>等参数实现prof数据的采样和生成，更多相关参数参考 <code>go test -h</code>。
+<a name="d8d3616c"></a></p>
+<h3 id="二-pprof-数据分析">二. pprof 数据分析</h3>
+<p>虽然 <code>net/http/pprof</code>提供的数据分析可以通过设置参数后直接在浏览器查看，但 pprof 采样数据主要是用于 pprof 工具的，特别针对 cpuprof, memprof, blockprof等来说，我们需要直观地得到整个调用关系链以及每次调用的详细信息，这是需要通过<code>go tool pprof</code>命令来分析:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">go</span> <span class="nx">tool</span> <span class="nx">pprof</span> <span class="p">[</span><span class="nx">binary</span><span class="p">]</span> <span class="p">[</span><span class="nx">binary</span><span class="p">.</span><span class="nx">prof</span><span class="p">]</span>
+<span class="err">#</span> <span class="nx">如果使用的</span> <span class="nx">net</span><span class="o">/</span><span class="nx">http</span><span class="o">/</span><span class="nx">pprof</span> <span class="nx">可以直接接</span> <span class="nx">URL</span>
+<span class="k">go</span> <span class="nx">tool</span> <span class="nx">pprof</span> <span class="nx">http</span><span class="p">:</span><span class="c1">//localhost:6060/debug/pprof/profile
+</span></code></pre></div><p>go pprof 采样数据是非常丰富的，大部分情况下我们只会用到 CPU 和 内存分析，因此这里介绍下 cpu, heap, block 和 mutex 四种 pprof 数据分析。
+<a name="user-content-2-1-cpuprofile"></a></p>
+<h4 id="21-cpuprofile">2.1 cpuprofile</h4>
+<p>以Profiling Go Programs中的示例代码为例:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="err">▶</span> <span class="k">go</span> <span class="nx">build</span> <span class="o">-</span><span class="nx">o</span> <span class="nx">havlak1</span> <span class="nx">havlak1</span><span class="p">.</span><span class="k">go</span> 
+<span class="err">▶</span> <span class="p">.</span><span class="o">/</span><span class="nx">havlak1</span> <span class="o">--</span><span class="nx">cpuprofile</span><span class="p">=</span><span class="nx">havlak1</span><span class="p">.</span><span class="nx">prof</span>
+<span class="err">#</span> <span class="nx">of</span> <span class="nx">loops</span><span class="p">:</span> <span class="mi">76000</span> <span class="p">(</span><span class="nx">including</span> <span class="mi">1</span> <span class="nx">artificial</span> <span class="nx">root</span> <span class="nx">node</span><span class="p">)</span>
+<span class="err">▶</span> <span class="k">go</span> <span class="nx">tool</span> <span class="nx">pprof</span> <span class="nx">havlak1</span> <span class="nx">havlak1</span><span class="p">.</span><span class="nx">prof</span>
+<span class="nx">File</span><span class="p">:</span> <span class="nx">havlak1</span>
+<span class="nx">Type</span><span class="p">:</span> <span class="nx">cpu</span>
+<span class="nx">Time</span><span class="p">:</span> <span class="nx">Apr</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2018</span> <span class="nx">at</span> <span class="mi">3</span><span class="p">:</span><span class="mi">50</span><span class="nf">pm</span> <span class="p">(</span><span class="nx">CST</span><span class="p">)</span>
+<span class="nx">Duration</span><span class="p">:</span> <span class="mf">20.40</span><span class="nx">s</span><span class="p">,</span> <span class="nx">Total</span> <span class="nx">samples</span> <span class="p">=</span> <span class="mf">23.30</span><span class="nf">s</span> <span class="p">(</span><span class="mf">114.24</span><span class="o">%</span><span class="p">)</span>
+<span class="nx">Entering</span> <span class="nx">interactive</span> <span class="nf">mode</span> <span class="p">(</span><span class="kd">type</span> <span class="s">&#34;help&#34;</span> <span class="k">for</span> <span class="nx">commands</span><span class="p">,</span> <span class="s">&#34;o&#34;</span> <span class="k">for</span> <span class="nx">options</span><span class="p">)</span>
+<span class="p">(</span><span class="nx">pprof</span><span class="p">)</span> <span class="nx">top5</span>
+<span class="nx">Showing</span> <span class="nx">nodes</span> <span class="nx">accounting</span> <span class="k">for</span> <span class="mf">9.60</span><span class="nx">s</span><span class="p">,</span> <span class="mf">41.20</span><span class="o">%</span> <span class="nx">of</span> <span class="mf">23.30</span><span class="nx">s</span> <span class="nx">total</span>
+<span class="nx">Dropped</span> <span class="mi">112</span> <span class="nf">nodes</span> <span class="p">(</span><span class="nx">cum</span> <span class="o">&lt;=</span> <span class="mf">0.12</span><span class="nx">s</span><span class="p">)</span>
+<span class="nx">Showing</span> <span class="nx">top</span> <span class="mi">5</span> <span class="nx">nodes</span> <span class="nx">out</span> <span class="nx">of</span> <span class="mi">90</span>
+      <span class="nx">flat</span>  <span class="nx">flat</span><span class="o">%</span>   <span class="nx">sum</span><span class="o">%</span>        <span class="nx">cum</span>   <span class="nx">cum</span><span class="o">%</span>
+     <span class="mf">2.59</span><span class="nx">s</span> <span class="mf">11.12</span><span class="o">%</span> <span class="mf">11.12</span><span class="o">%</span>      <span class="mf">2.78</span><span class="nx">s</span> <span class="mf">11.93</span><span class="o">%</span>  <span class="nx">runtime</span><span class="p">.</span><span class="nx">mapaccess1_fast64</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">Cellar</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="mf">1.9.1</span><span class="o">/</span><span class="nx">libexec</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">runtime</span><span class="o">/</span><span class="nx">hashmap_fast</span><span class="p">.</span><span class="k">go</span>
+     <span class="mf">2.26</span><span class="nx">s</span>  <span class="mf">9.70</span><span class="o">%</span> <span class="mf">20.82</span><span class="o">%</span>      <span class="mf">4.97</span><span class="nx">s</span> <span class="mf">21.33</span><span class="o">%</span>  <span class="nx">runtime</span><span class="p">.</span><span class="nx">scanobject</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">Cellar</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="mf">1.9.1</span><span class="o">/</span><span class="nx">libexec</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">runtime</span><span class="o">/</span><span class="nx">mgcmark</span><span class="p">.</span><span class="k">go</span>
+     <span class="mf">2.06</span><span class="nx">s</span>  <span class="mf">8.84</span><span class="o">%</span> <span class="mf">29.66</span><span class="o">%</span>     <span class="mf">13.79</span><span class="nx">s</span> <span class="mf">59.18</span><span class="o">%</span>  <span class="nx">main</span><span class="p">.</span><span class="nx">FindLoops</span> <span class="o">/</span><span class="nx">Users</span><span class="o">/</span><span class="nx">wudaijun</span><span class="o">/</span><span class="nx">Code</span><span class="o">/</span><span class="nx">goprof</span><span class="o">/</span><span class="nx">havlak</span><span class="o">/</span><span class="nx">havlak1</span><span class="p">.</span><span class="k">go</span>
+     <span class="mf">1.39</span><span class="nx">s</span>  <span class="mf">5.97</span><span class="o">%</span> <span class="mf">35.62</span><span class="o">%</span>      <span class="mf">1.39</span><span class="nx">s</span>  <span class="mf">5.97</span><span class="o">%</span>  <span class="nx">runtime</span><span class="p">.</span><span class="nx">heapBitsForObject</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">Cellar</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="mf">1.9.1</span><span class="o">/</span><span class="nx">libexec</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">runtime</span><span class="o">/</span><span class="nx">mbitmap</span><span class="p">.</span><span class="k">go</span>
+     <span class="mf">1.30</span><span class="nx">s</span>  <span class="mf">5.58</span><span class="o">%</span> <span class="mf">41.20</span><span class="o">%</span>      <span class="mf">4.14</span><span class="nx">s</span> <span class="mf">17.77</span><span class="o">%</span>  <span class="nx">runtime</span><span class="p">.</span><span class="nx">mapassign_fast64</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">Cellar</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="mf">1.9.1</span><span class="o">/</span><span class="nx">libexec</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">runtime</span><span class="o">/</span><span class="nx">hashmap_fast</span><span class="p">.</span><span class="k">go</span>
+</code></pre></div><p>top5用于显示消耗 CPU 前五的函数，每一行代表一个函数，每一列为一项指标:</p>
+<ul>
+<li>flat: 采样时，该函数正在运行的次数*采样频率(10ms)，即得到估算的函数运行”采样时间”。这里不包括函数等待子函数返回。</li>
+<li>flat%: flat / 总采样时间值</li>
+<li>sum%: 前面所有行的 flat% 的累加值，如第二行 sum% = 20.82% = 11.12% + 9.70%</li>
+<li>cum: 采样时，该函数出现在调用堆栈的采样时间，包括函数等待子函数返回。因此 flat &lt;= cum</li>
+<li>cum%: cum / 总采样时间值</li>
+</ul>
+<p>PS: 老的pprof版本貌似显示的是采样次数，比如 flat 为采样时该函数正在运行的次数，这个次数*采样频率即得到采样时间。<br /><code>go tool pprof</code> 常用命令:</p>
+<ul>
+<li>topN: 输入 top 命令，默认显示 flat 前10的函数调用，可使用 -cum 以 cum 排序</li>
+<li>list Func: 显示函数名以及每行代码的采样分析</li>
+<li>web: 生成 svg 热点图片，可在浏览器中打开，可使用 web Func 来过滤指定函数相关调用树</li>
+</ul>
+<p>通过<code>top5</code>命令可以看到，<code>mapaccess1_fast64</code>函数占用的CPU 采样时间最多，通过 <code>web mapaccess1_fast64</code> 命令打开调用图谱，查看该函数调用关系，可以看到主要在DFS 和 FindLoops 中调用的，然后再通过 <code>list DFS</code>查看函数代码和关键调用，得到 map 结构是瓶颈点，尝试转换为 slice 优化，整个过程参考Profiling Go Programs。总的思路就是通过<code>top</code>    和<code>web</code> 找出关键函数，再通过<code>list Func</code> 查看函数代码，找到关键代码行并确认优化方案(辅以 go test Benchmark)。
+<a name="user-content-2-2-memprofile"></a></p>
+<h4 id="22-memprofile">2.2 memprofile</h4>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="err">▶</span> <span class="k">go</span> <span class="nx">build</span> <span class="o">-</span><span class="nx">o</span> <span class="nx">havlak3</span> <span class="nx">havlak3</span><span class="p">.</span><span class="k">go</span> 
+<span class="err">▶</span> <span class="p">.</span><span class="o">/</span><span class="nx">havlak3</span> <span class="o">--</span><span class="nx">memprofile</span><span class="p">=</span><span class="nx">havlak3</span><span class="p">.</span><span class="nx">mprof</span>
+<span class="err">▶</span> <span class="k">go</span> <span class="nx">tool</span> <span class="nx">pprof</span> <span class="nx">havlak3</span> <span class="nx">havlak3</span><span class="p">.</span><span class="nx">mprof</span>
+<span class="nx">File</span><span class="p">:</span> <span class="nx">havlak3</span>
+<span class="nx">Type</span><span class="p">:</span> <span class="nx">inuse_space</span>
+<span class="nx">Time</span><span class="p">:</span> <span class="nx">Apr</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2018</span> <span class="nx">at</span> <span class="mi">3</span><span class="p">:</span><span class="mi">44</span><span class="nf">pm</span> <span class="p">(</span><span class="nx">CST</span><span class="p">)</span>
+<span class="nx">Entering</span> <span class="nx">interactive</span> <span class="nf">mode</span> <span class="p">(</span><span class="kd">type</span> <span class="s">&#34;help&#34;</span> <span class="k">for</span> <span class="nx">commands</span><span class="p">,</span> <span class="s">&#34;o&#34;</span> <span class="k">for</span> <span class="nx">options</span><span class="p">)</span>
+<span class="p">(</span><span class="nx">pprof</span><span class="p">)</span> <span class="nx">top</span>
+<span class="nx">Showing</span> <span class="nx">nodes</span> <span class="nx">accounting</span> <span class="k">for</span> <span class="mf">57.39</span><span class="nx">MB</span><span class="p">,</span> <span class="mi">100</span><span class="o">%</span> <span class="nx">of</span> <span class="mf">57.39</span><span class="nx">MB</span> <span class="nx">total</span>
+      <span class="nx">flat</span>  <span class="nx">flat</span><span class="o">%</span>   <span class="nx">sum</span><span class="o">%</span>        <span class="nx">cum</span>   <span class="nx">cum</span><span class="o">%</span>
+   <span class="mf">39.60</span><span class="nx">MB</span> <span class="mf">69.00</span><span class="o">%</span> <span class="mf">69.00</span><span class="o">%</span>    <span class="mf">39.60</span><span class="nx">MB</span> <span class="mf">69.00</span><span class="o">%</span>  <span class="nx">main</span><span class="p">.</span><span class="nx">FindLoops</span> <span class="o">/</span><span class="nx">Users</span><span class="o">/</span><span class="nx">wudaijun</span><span class="o">/</span><span class="nx">Code</span><span class="o">/</span><span class="nx">goprof</span><span class="o">/</span><span class="nx">havlak</span><span class="o">/</span><span class="nx">havlak3</span><span class="p">.</span><span class="k">go</span>
+   <span class="mf">11.29</span><span class="nx">MB</span> <span class="mf">19.67</span><span class="o">%</span> <span class="mf">88.67</span><span class="o">%</span>    <span class="mf">11.29</span><span class="nx">MB</span> <span class="mf">19.67</span><span class="o">%</span>  <span class="nx">main</span><span class="p">.(</span><span class="o">*</span><span class="nx">CFG</span><span class="p">).</span><span class="nx">CreateNode</span> <span class="o">/</span><span class="nx">Users</span><span class="o">/</span><span class="nx">wudaijun</span><span class="o">/</span><span class="nx">Code</span><span class="o">/</span><span class="nx">goprof</span><span class="o">/</span><span class="nx">havlak</span><span class="o">/</span><span class="nx">havlak3</span><span class="p">.</span><span class="k">go</span>
+    <span class="mf">6.50</span><span class="nx">MB</span> <span class="mf">11.33</span><span class="o">%</span>   <span class="mi">100</span><span class="o">%</span>    <span class="mf">17.79</span><span class="nx">MB</span> <span class="mf">31.00</span><span class="o">%</span>  <span class="nx">main</span><span class="p">.</span><span class="nx">NewBasicBlockEdge</span> <span class="o">/</span><span class="nx">Users</span><span class="o">/</span><span class="nx">wudaijun</span><span class="o">/</span><span class="nx">Code</span><span class="o">/</span><span class="nx">goprof</span><span class="o">/</span><span class="nx">havlak</span><span class="o">/</span><span class="nx">havlak3</span><span class="p">.</span><span class="k">go</span>
+         <span class="mi">0</span>     <span class="mi">0</span><span class="o">%</span>   <span class="mi">100</span><span class="o">%</span>    <span class="mf">39.60</span><span class="nx">MB</span> <span class="mf">69.00</span><span class="o">%</span>  <span class="nx">main</span><span class="p">.</span><span class="nx">FindHavlakLoops</span> <span class="o">/</span><span class="nx">Users</span><span class="o">/</span><span class="nx">wudaijun</span><span class="o">/</span><span class="nx">Code</span><span class="o">/</span><span class="nx">goprof</span><span class="o">/</span><span class="nx">havlak</span><span class="o">/</span><span class="nx">havlak3</span><span class="p">.</span><span class="k">go</span>
+         <span class="mi">0</span>     <span class="mi">0</span><span class="o">%</span>   <span class="mi">100</span><span class="o">%</span>    <span class="mf">17.79</span><span class="nx">MB</span> <span class="mf">31.00</span><span class="o">%</span>  <span class="nx">main</span><span class="p">.</span><span class="nx">buildBaseLoop</span> <span class="o">/</span><span class="nx">Users</span><span class="o">/</span><span class="nx">wudaijun</span><span class="o">/</span><span class="nx">Code</span><span class="o">/</span><span class="nx">goprof</span><span class="o">/</span><span class="nx">havlak</span><span class="o">/</span><span class="nx">havlak3</span><span class="p">.</span><span class="k">go</span>
+</code></pre></div><p>memprofile 也就是 heap 采样数据，go tool pprof 默认显示的是使用的内存的大小，如果想要显示使用的堆对象的个数，则通过<code>go tool pprof --inuse_objects havlak3 havlak3.mprof</code>，其它参数还有<code>--alloc_objects</code>和<code>--alloc_space</code>，分别是分配的堆内存大小和对象个数。在本例中，FindLoops 函数分配了39.60M 堆内存，占到69%，同样，接下来是通过<code>list FindLoops</code>对函数代码进行     review，找出关键数据结构，进行优化。
+<a name="user-content-2-3-blockprofile"></a></p>
+<h4 id="23-blockprofile">2.3 blockprofile</h4>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">var</span> <span class="nx">mutex</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">Mutex</span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// rate = 1 时, 统计所有的 block event, 
+</span><span class="c1"></span>    <span class="c1">// rate &lt;=0 时，则关闭block profiling
+</span><span class="c1"></span>    <span class="c1">// rate &gt; 1 时，为 ns 数，阻塞时间t&gt;rate的event 一定会被统计，小于rate则有t/rate 的几率被统计
+</span><span class="c1"></span>    <span class="c1">// 参考 https://github.com/golang/go/blob/release-branch.go1.9/src/runtime/mprof.go#L397
+</span><span class="c1"></span>	<span class="nx">runtime</span><span class="p">.</span><span class="nf">SetBlockProfileRate</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+	<span class="kd">var</span> <span class="nx">wg</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
+	<span class="nx">wg</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+	<span class="nx">mutex</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
+	<span class="k">go</span> <span class="nf">worker</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">wg</span><span class="p">)</span>
+	<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span><span class="p">)</span>
+	<span class="nx">mutex</span><span class="p">.</span><span class="nf">Unlock</span><span class="p">()</span>
+	<span class="nx">wg</span><span class="p">.</span><span class="nf">Wait</span><span class="p">()</span>
+	<span class="nf">writeProfTo</span><span class="p">(</span><span class="s">&#34;block&#34;</span><span class="p">,</span> <span class="s">&#34;block.bprof&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">worker</span><span class="p">(</span><span class="nx">wg</span> <span class="o">*</span><span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">defer</span> <span class="nx">wg</span><span class="p">.</span><span class="nf">Done</span><span class="p">()</span>
+	<span class="nx">mutex</span><span class="p">.</span><span class="nf">Lock</span><span class="p">()</span>
+	<span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span><span class="p">)</span>
+	<span class="nx">mutex</span><span class="p">.</span><span class="nf">Unlock</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">writeProfTo</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">fn</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">p</span> <span class="o">:=</span> <span class="nx">pprof</span><span class="p">.</span><span class="nf">Lookup</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">p</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;%s prof not found&#34;</span><span class="p">,</span> <span class="nx">name</span><span class="p">)</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+	<span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;%v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+	<span class="k">defer</span> <span class="nx">f</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+	<span class="nx">err</span> <span class="p">=</span> <span class="nx">p</span><span class="p">.</span><span class="nf">WriteTo</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;%v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nf">Error</span><span class="p">())</span>
+		<span class="k">return</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>运行程序并 pprof:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="err">▶</span> <span class="k">go</span> <span class="nx">build</span> <span class="o">-</span><span class="nx">o</span> <span class="nx">Temp</span> <span class="nx">tmp</span><span class="p">.</span><span class="k">go</span>
+<span class="err">▶</span> <span class="k">go</span> <span class="nx">tool</span> <span class="nx">pprof</span> <span class="nx">Temp</span> <span class="nx">block</span><span class="p">.</span><span class="nf">bprof</span>
+<span class="p">(</span><span class="nx">pprof</span><span class="p">)</span> <span class="nx">top</span>
+<span class="nx">Showing</span> <span class="nx">nodes</span> <span class="nx">accounting</span> <span class="k">for</span> <span class="mf">3.37</span><span class="nx">ms</span><span class="p">,</span> <span class="mi">100</span><span class="o">%</span> <span class="nx">of</span> <span class="mf">3.37</span><span class="nx">ms</span> <span class="nx">total</span>
+      <span class="nx">flat</span>  <span class="nx">flat</span><span class="o">%</span>   <span class="nx">sum</span><span class="o">%</span>        <span class="nx">cum</span>   <span class="nx">cum</span><span class="o">%</span>
+    <span class="mf">2.04</span><span class="nx">ms</span> <span class="mf">60.52</span><span class="o">%</span> <span class="mf">60.52</span><span class="o">%</span>     <span class="mf">2.04</span><span class="nx">ms</span> <span class="mf">60.52</span><span class="o">%</span>  <span class="nx">sync</span><span class="p">.(</span><span class="o">*</span><span class="nx">Mutex</span><span class="p">).</span><span class="nx">Lock</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">Cellar</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="mf">1.9.1</span><span class="o">/</span><span class="nx">libexec</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">sync</span><span class="o">/</span><span class="nx">mutex</span><span class="p">.</span><span class="k">go</span>
+    <span class="mf">1.33</span><span class="nx">ms</span> <span class="mf">39.48</span><span class="o">%</span>   <span class="mi">100</span><span class="o">%</span>     <span class="mf">1.33</span><span class="nx">ms</span> <span class="mf">39.48</span><span class="o">%</span>  <span class="nx">sync</span><span class="p">.(</span><span class="o">*</span><span class="nx">WaitGroup</span><span class="p">).</span><span class="nx">Wait</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">Cellar</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="mf">1.9.1</span><span class="o">/</span><span class="nx">libexec</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">sync</span><span class="o">/</span><span class="nx">waitgroup</span><span class="p">.</span><span class="k">go</span>
+         <span class="mi">0</span>     <span class="mi">0</span><span class="o">%</span>   <span class="mi">100</span><span class="o">%</span>     <span class="mf">1.33</span><span class="nx">ms</span> <span class="mf">39.48</span><span class="o">%</span>  <span class="nx">main</span><span class="p">.</span><span class="nx">main</span> <span class="o">/</span><span class="nx">Users</span><span class="o">/</span><span class="nx">wudaijun</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">ngs</span><span class="o">/</span><span class="nx">test</span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">tmp</span><span class="p">.</span><span class="k">go</span>
+         <span class="mi">0</span>     <span class="mi">0</span><span class="o">%</span>   <span class="mi">100</span><span class="o">%</span>     <span class="mf">2.04</span><span class="nx">ms</span> <span class="mf">60.52</span><span class="o">%</span>  <span class="nx">main</span><span class="p">.</span><span class="nx">worker</span> <span class="o">/</span><span class="nx">Users</span><span class="o">/</span><span class="nx">wudaijun</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">ngs</span><span class="o">/</span><span class="nx">test</span><span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">tmp</span><span class="p">.</span><span class="k">go</span>
+         <span class="mi">0</span>     <span class="mi">0</span><span class="o">%</span>   <span class="mi">100</span><span class="o">%</span>     <span class="mf">3.37</span><span class="nx">ms</span>   <span class="mi">100</span><span class="o">%</span>  <span class="nx">runtime</span><span class="p">.</span><span class="nx">goexit</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">Cellar</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="mf">1.9.1</span><span class="o">/</span><span class="nx">libexec</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">runtime</span><span class="o">/</span><span class="nx">asm_amd64</span><span class="p">.</span><span class="nx">s</span>
+         <span class="mi">0</span>     <span class="mi">0</span><span class="o">%</span>   <span class="mi">100</span><span class="o">%</span>     <span class="mf">1.33</span><span class="nx">ms</span> <span class="mf">39.48</span><span class="o">%</span>  <span class="nx">runtime</span><span class="p">.</span><span class="nx">main</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">Cellar</span><span class="o">/</span><span class="k">go</span><span class="o">/</span><span class="mf">1.9.1</span><span class="o">/</span><span class="nx">libexec</span><span class="o">/</span><span class="nx">src</span><span class="o">/</span><span class="nx">runtime</span><span class="o">/</span><span class="nx">proc</span><span class="p">.</span><span class="k">go</span>
+</code></pre></div><p>可以看到程序在 mutex.Lock 上阻塞了2.04ms(worker goroutine)， 在 WaitGroup.Wait 上等待了1.33ms(main goroutine)，从更上层来看，在 main 函数中一共阻塞了2.04ms，worker函数中阻塞了1.33ms(cum 列)，通过 <code>web</code>命令生成 svg 图片在浏览器查看:<br /><img src="https://staticqn.gitkin.com/blog/34183680/1617652639366022744.webp#align=left&amp;display=inline&amp;height=918&amp;margin=%5Bobject%20Object%5D&amp;originHeight=918&amp;originWidth=1280&amp;size=0&amp;status=done&amp;style=none&amp;width=1280" alt=""><br />可以很直观地看到整个阻塞调用链，对于耗时较多的阻塞调用加以优化。
+<a name="user-content-2-4-mutexprofile"></a></p>
+<h4 id="24-mutexprofile">2.4 mutexprofile</h4>
+<p>仍然用2.3中的代码，只需要改两个地方，将 <code>runtime.SetBlockProfileRate(1 * 1000 * 1000)</code> 改为:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">// 当 rate = 0 时，关闭 mutex prof (默认值)
+// 当 rate = 1 时，表示记录所有的 mutex event
+// 当 rate &gt; 1 时，记录 1/rate 的 mutex event(随机)
+runtime.SetMutexProfileFraction(1)
+复制代码
+</code></pre></div><p>再将<code>writeProfTo(&quot;block&quot;, &quot;block.bprof&quot;)</code>改为<code>writeProfTo(&quot;mutex&quot;, &quot;mutex.mprof&quot;)</code>即可，编译运行，并打开 pprof 工具:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">▶ go tool pprof bin/Temp mutex.mprof
+(pprof) top
+Showing nodes accounting for 2.55ms, 100% of 2.55ms total
+      flat  flat%   sum%        cum   cum%
+    2.55ms   100%   100%     2.55ms   100%  sync.(*Mutex).Unlock /usr/local/Cellar/go/1.9.1/libexec/src/sync/mutex.go
+         0     0%   100%     2.55ms   100%  main.main /Users/wudaijun/go/src/ngs/test/tmp/tmp.go
+         0     0%   100%     2.55ms   100%  runtime.goexit /usr/local/Cellar/go/1.9.1/libexec/src/runtime/asm_amd64.s
+         0     0%   100%     2.55ms   100%  runtime.main /usr/local/Cellar/go/1.9.1/libexec/src/runtime/proc.go
+复制代码
+</code></pre></div><p>查看 svg 图:<br /><img src="https://staticqn.gitkin.com/blog/34183680/1617652639366030028.webp#align=left&amp;display=inline&amp;height=960&amp;margin=%5Bobject%20Object%5D&amp;originHeight=960&amp;originWidth=1212&amp;size=0&amp;status=done&amp;style=none&amp;width=1212" alt="">
+<a name="d41d8cd9"></a></p>
+<h3 id="heading"></h3>
+<p>/Golang/开发/</p>
+</div>
+                <div class="post_footer">
+                    
+                </div>
+            </div>
+
+            
+            <div class="pagination">
+                <div class="pagination__buttons">
+                    
+                    <span class="button previous">
+        <a href="https://xxzh.dev/posts/blog-34254064/">
+          <span class="button__icon">«</span>
+          <span class="button__text">分布式系统理论</span>
+        </a>
+      </span>
+                    
+                    
+                    <span class="button next">
+        <a href="https://xxzh.dev/posts/34139169/">
+          <span class="button__text">分布式系统的问题</span>
+          <span class="button__icon">»</span>
+        </a>
+      </span>
+                    
+                </div>
+            </div>
+            
+            
+            
+            
+            
+        </div>
+    </div>
+</div>
+<a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+<footer class="footer">
+    <div class="footer_slogan">
+        <span>“ 星星之火，可以燎原 ”</span>
+    </div>
+    <div class="powered_by">
+        本博客由 <a href="https://github.com/gokins/turbo" target="_blank">Turbo</a> 强力驱动.
+    </div>
+</footer>
+
+<script src="https://blogcool.gitkin.com/js/jquery-3.5.1.min.js"></script>
+<link href="https://blogcool.gitkin.com/css/fancybox.min.css" rel="stylesheet">
+<script src="https://blogcool.gitkin.com/js/fancybox.min.js"></script>
+<script src="https://blogcool.gitkin.com/js/zozo.js"></script>
+
+
+
+
+
+</body>
+
+</html>
